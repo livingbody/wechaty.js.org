@@ -1,0 +1,1831 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wechaty.js.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wechaty.js.org/" rel="alternate" type="text/html" /><updated>2021-11-01T17:52:00+00:00</updated><id>https://wechaty.js.org/feed.xml</id><title type="html">Wechaty</title><subtitle>Conversational RPA SDK for Chatbot Makers</subtitle><entry><title type="html">GSoD 2021 report on Improve the gRPC and OpenAPI ecosystem</title><link href="https://wechaty.js.org/2021/10/30/gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem/" rel="alternate" type="text/html" title="GSoD 2021 report on Improve the gRPC and OpenAPI ecosystem" /><published>2021-10-30T00:00:00+00:00</published><updated>2021-10-30T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/30/gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem</id><content type="html" xml:base="https://wechaty.js.org/2021/10/30/gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This is the project report for &lt;strong&gt;Improve the gRPC and OpenAPI ecosystem&lt;/strong&gt; which was completed during Google Season of Docs 2021. The status of the project can be regarded as complete due to the fact that all pull requests have been merged and all the initial premises of the project have been fulfilled.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/iamrajiv/GSoD-2021&quot;&gt;https://github.com/iamrajiv/GSoD-2021&lt;/a&gt; repository contains details about my work in Google Season of Docs 2021.&lt;/p&gt;
+
+&lt;h2 id=&quot;learnings&quot;&gt;Learnings&lt;/h2&gt;
+
+&lt;p&gt;I am very glad that I had the opportunity to take part in the Google Season of Docs program project. Participating in this program has helped me to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Got involved with an amazing Wechaty community.&lt;/li&gt;
+  &lt;li&gt;Got to know about Robotic Process Automation (RPA) SDK for Chatbot Makers.&lt;/li&gt;
+  &lt;li&gt;Learned about Docusaurus, JavaScript XML(JSX), and Progressive web apps (PWAs).&lt;/li&gt;
+  &lt;li&gt;Got a deeper understanding of Go, gRPC and Swagger UI, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h2&gt;
+
+&lt;p&gt;I am deeply grateful to my mentors &lt;a href=&quot;https://github.com/huan&quot;&gt;Huan LI&lt;/a&gt; and &lt;a href=&quot;https://github.com/lijiarui&quot;&gt;Li Jiarui&lt;/a&gt; and volunteers &lt;a href=&quot;https://github.com/proudofsimin&quot;&gt;Simin Liao&lt;/a&gt; and &lt;a href=&quot;https://github.com/Rohitesh-Kumar-Jain&quot;&gt;Rohitesh Kumar Jain&lt;/a&gt;. Mentors and volunteers guided me patiently through the project and were always ready to help, review work in progress, gave feedback regarding the overall shape of the project and the feasibility of certain solutions, and maintained a very friendly, supportive, and stimulating atmosphere on the team. They devoted a lot of time to this project and led the video meetings in a well-organized, yet non-stressful manner. The project could not be completed without the generous feedback and help from the Wechaty team. Last but not least, I would like to thank Google and Google Season of Docs organizers for this initiative.&lt;/p&gt;</content><author><name>iamrajiv</name></author><category term="gsod" /><category term="grpc" /><category term="gsod" /><category term="openapi" /><category term="report" /><summary type="html">Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem/10-gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem/10-gsod-2021-report-on-improve-the-grpc-and-openapi-ecosystem.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">1024 程序员节：Milvus 社区五位开源界程序员心路历程分享</title><link href="https://wechaty.js.org/2021/10/29/zilliz-milvus-open-source-panel/" rel="alternate" type="text/html" title="1024 程序员节：Milvus 社区五位开源界程序员心路历程分享" /><published>2021-10-29T00:00:00+00:00</published><updated>2021-10-29T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/29/zilliz-milvus-open-source-panel</id><content type="html" xml:base="https://wechaty.js.org/2021/10/29/zilliz-milvus-open-source-panel/">&lt;blockquote&gt;
+  &lt;p&gt;「开源」如何帮你增加市场竞争力？
+  离开大厂，「开源」如何成为一种新的创业模式？
+  如何积累开源项目经验，打造一份完美的简历？
+  商业公司吸引开源人才，有哪些妙招？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;1024 程序员节， Milvus 社区邀请到了五位开源界程序员大牛，为大家分享自己成长的心路历程。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-zilliz-milvus-open-source-panel/zilliz-poster.webp&quot; alt=&quot;1024程序员节&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;视频回放&quot;&gt;视频回放&lt;/h2&gt;
+
+&lt;p&gt;「开源」如何帮助你增加职场竞争力？离开大厂，「开源」成为一种新的创业模式？如何积累开源项目经验，打造一份完美的简历？来听听五位开源大咖分享他们的成长秘诀：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;顾钧，Zilliz合伙人、LF AI &amp;amp; Data基金会TAC成员；&lt;/li&gt;
+  &lt;li&gt;李建盛，作者，开源之道主创, Linux基金会APAC开源布道者；&lt;/li&gt;
+  &lt;li&gt;李卓桓，万星开源项目 Wechaty 发起人，PreAngel天使基金合伙人；&lt;/li&gt;
+  &lt;li&gt;程浩，上海白玉兰开源开放研究院研究员、示说网社区发起人；&lt;/li&gt;
+  &lt;li&gt;赵生宇，同济大学计算机博士在读，Wuhan 2020开源项目发起人。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 70%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://player.bilibili.com/player.html?bvid=BV1hU4y1u7VD&amp;amp;high_quality=1&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;你是怎么走上开源道路的&quot;&gt;你是怎么走上开源道路的？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：我的职业生涯大概有十七八年，前十年主要在搞技术，2015 年到现在主要是作者，以文字工作和开源布道为主，是 Linux 基金会 APAC 开源布道者。欢迎关注我的公众号「开源之道」，在 GitHub 上也有相应的主页。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李卓桓&lt;/strong&gt;：我是一个从业三十年的资深程序员，从小喜欢写程序，92 年写 basic，玩小霸王学习机。在清华上学阶段正好赶上互联网第一波浪潮，后来做了自己的公司，当优酷网首席科学家，做了国内早期的微博网站「叽歪网」，再后来成为 PreAngel 投资人。最近我关注人工智能，尤其是 Chatbot 自然语言对话方向。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;程浩&lt;/strong&gt;：我 2004 年毕业后，一直从事软件开发工作。2010 年我第一次接触开源，2012 年加入因特尔，我在大数据团队中正式制作了开源软件，做了很多功能优化和开发。我很有幸见证了开源和大数据在国内逐渐兴起繁荣的过程。2018 年，我开始做自己的创业项目，之后会详细介绍。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;赵生宇&lt;/strong&gt;：我从小就比较喜欢玩计算机，是一个十足的「网瘾少年」，我当时没有上过专业的课程，于是跟着杂志上的教程做了一些源代码的实现，做了一些游戏管理器、屏保等小项目。清华计算机系毕业后，我正好赶上了移动互联网的浪潮，于是开始创业，做了一些早期的安卓开发工作。在北大读硕士的最后一年，我在美团做大数据分析，有一次正好赶上了 Apache 的中国路演，我作为北大学生的身份去做志愿者。后来就来到微软做社区运营，研究生毕业后我在网易游戏做研发，但依然持续地做开源社区的志愿活动。2018 年，我去了阿里做开源运营的工作。在工作中，我发现设计治理和开源研究这一块非常有意思，我和王伟导师一拍即合，去同济大学计算机系读博，目前主要研究方向是开源理论和行为数据研究。
+去年我们发起 Wuhan 2020，尝试把开源的模式推广到数字公益领域。也感谢李卓桓的 Wechaty 的项目，对志愿者分流有很大的帮助。&lt;/p&gt;
+
+&lt;h2 id=&quot;开源到底是什么&quot;&gt;开源到底是什么？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;赵生宇&lt;/strong&gt;：我一直对开源很感兴趣，大规模协作、生产资料共享的模式，对传统的协作模式产生了很大影响。开源不仅是技术，还是制度和流程的创新。可以追溯到 licences、CLA 法律文件的产生，这些协议和制度上的创新带来了协作上的改变。开源可以说是，数字化对软件开发的赋能的产物。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：从「布道」的角度，我认为开源已成为数字化时代人和人之间「打交道」的方式。开源的外延很广泛，不仅限于代码，还是一种文化。我们可以把开源作为一种文化去普及。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：开源有一套约定俗成的惯例，通用的「打交道」的做法。当新人加入到开源中，可能不熟悉这种开源的习俗。那么，如何激活开源社区？社区之间如何做好沟通？Wechaty 是一个很大的开源项目，在中国很多社群都需要微信机器人。请问李卓桓，你们是如何组织和维护这样一个社群的呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李卓桓&lt;/strong&gt;：国内对微信机器人有很大的需求。哪怕是简单的自动回复就能大大提高人的工作效率，更不用说用自然语言处理来来让智能客服帮用户解决问题。最早设立聊天机器人的动机起源于我个人的使用痛点，因为我在微信上的消息爆满，所以我想做一个机器人回复这些问题。于是，我开始着手做一个聊天机器人。这个项目开源以后，在 GitHub 上收到了第一个 pr，提出并解决我的项目不支持收发图片的问题。之后又有一些 pr 新增代码功能、修改文档。我看到了外部开发者也在使用和维护这个项目，我开始相信，这个项目可能不会变成一个一个尸体！（之前写过一个局域网聊天工具 Zixia chat，现在已经变成尸体了）
+于是，我开始思考如何将这个项目运营地更好。我们的社区 base 在 GitHub 上，有两百多位社区贡献者，通过使用 GitHub 团队协作、管理、审批、issues 链接等功能，进行内容协作管理。除了 GitHub 工具，我们受到了 Apache 很多影响，使用 Apache 的社区管理方式，将大多数的决策讨论放在 issue 里公开给大家。最后，我自己对微信聊天机器人是真爱！因为是真爱，所以我有热情维护好这个项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;开源如何增加职场竞争力&quot;&gt;开源如何增加职场竞争力？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：大家觉得开源是否可以增加自己的职场竞争力？李建盛老师，你的工作一开始就围绕着 Linux 发行版展开，深度参与到了开源中，你觉得开源是如何加速新人的成长呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：我们这一代经历了全球互联网高速发展和 GitHub 崛起的年代。一个工程师如果想学习物理、离散数学等各种知识，找身边的人讨论可能不如找网友讨论。当你参与到全球互联网中，你可以和最顶尖的高手对话、交流，专门领域的社区加速工程师的成长。互联网的崛起、开源的崛起帮助帮助大家深入讨论，比如 VB 是一个典型的闭源时代的产物，如果你要讨论 VB 编译技术，你要跑到微软内部，这基本上不太可能；但如果你学 gcc，讨论壁垒就大大降低了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：参与开源帮你找到了一个和别人的共同话题；互联网帮你找到共同感兴趣的社区讨论交流。「开源+互联网社区」大大加速工程师技术能力的成长。我也想把这个话题抛给程浩老师。程老师 2004 年毕业，2012 年加入英特尔，参与到很多开源项目的研发中，目前在上海白玉兰开放研究院工作。我很好奇，您在参与开源的过程中，是如何提升自我并做出改变的？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;程浩&lt;/strong&gt;：对我来说，2012 年是一个明显的分水岭，我从一个开源项目的用户转变为开发者。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从使用的角度来说，做一些应用软件，我的软件跑起来就结束了；开发开源软件时，我需要吸收不同人给我的信息。&lt;/li&gt;
+  &lt;li&gt;从思维冲击角度来说，一个开源的项目一般适用于基础架构或基础中间件，不一定有明确的应用场景的指示，因此开发设计的思维模式就和应用软件不一样，也需要多与社区伙伴讨论。&lt;/li&gt;
+  &lt;li&gt;从技术能力角度来说，开源有意思的地方是，你写的每一行代码都会被千千万万人看到，你写的代码会被千千万万人「拷打」，你会得到直观的帮助和指点，大大提高编码技巧。&lt;/li&gt;
+  &lt;li&gt;从打交道的方式来说，代码背后是一个个鲜活的人，每个人都有不同解决问题的思路。我们如何得到一个统一的方案？高效简洁、有理有据的沟通方法是要经受训练的。&lt;/li&gt;
+  &lt;li&gt;从需求管理的角度，我会更多地思考：如何看待场景和需求？哪些应该是眼前要实现的，哪些可以放在后面？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：开源带来了视角的转变，需要考虑更加通用的场景，这一点我深有体会。我之前在 IBM 做售前技术工程师，在闭源的环境下，数据库的研发不会直接接触用户，而是通过售前和售后技术工程师来沟通，研发不知道用户是如何使用的；在开源的环境下，这个问题就被巧妙地解决了。&lt;/p&gt;
+
+&lt;h2 id=&quot;有什么给年轻程序员的建议&quot;&gt;有什么给年轻程序员的建议？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：关于程序员成长话题，大家有什么经验分享呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;赵生宇&lt;/strong&gt;：我最大的启发是，本以为自己会写一辈子程序，没想到开源拓宽了我的视野。传统软件模式是线性的，但开源模式是网状关联的。这种视野上的拓宽，让我看待整个世界的视角就不一样了。一个餐厅、一个企业、一个国家是怎么样运转的？我有了更多看待世界的眼光，我找到了我想实现的事情，而技术是成为一种手段。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李卓桓&lt;/strong&gt;：我的建议是，开源可以让喜欢写程序的人获得最大的乐趣。如果想要让自己的潜力得到最大的发挥，还是应该做自己感兴趣的事情。
+从工作的场景下，如果你在开源社区有一些经验，你会学习到一些「纯网友协作」的交流方法。提问、回答问题、鼓励他人提问……这些方法在学校很难学到；从求职角度，开源的经验对于自己产出和在公司内协作，都有很大的帮助。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：我不太敢给年轻人提建议。从我个人的经历来说，如果没有开源，我可能就会陷入迷茫。开源，给个人和企业带来无限机会，保持开放，不管是对家人、朋友，还是对技术，都需要保持开放。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;程浩&lt;/strong&gt;：当自己的工作经历积累到一定程度后，我就思考我到底应该干什么？我离开大厂，想要做一些自己觉得更有价值、更有意思的工作。我做了示说网，这是一个面向开发者和程序员的社区、聚焦开发人员成长的平台。&lt;/p&gt;
+
+&lt;h2 id=&quot;有什么推荐给程序员阅读的书籍&quot;&gt;有什么推荐给程序员阅读的书籍？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：我推荐《匠人》，这是当代社会学家理查德•桑内特的作品。作者认为，从古到今各种职业，只要有一种「为了把一件事做好而做好」的冲动，都可以被称为叫匠人。匠人的领域远远大于熟练手工劳动的范围；今天的程序员、医生、父母和公民都需要了解匠人精神的价值所在。希望大家在各行各业，都追求精益求精的精神。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李卓桓&lt;/strong&gt;：我推荐《Chatbot从0到1：对话式交互设计实践指南》，这本书是我写的，欢迎大家斧正。我觉得我算是一个聊天机器人领域的「匠人」，文中没有太多技术代码的内容，主要讲的是如何用文本来做交互。欢迎对自然语言处理（NLP）、对话式人工智能（Conversational AI）感兴趣的朋友阅读。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;赵生宇&lt;/strong&gt;：我推荐《俞军产品方法论》。这本书贯穿了管理学和新制度经济学的思想，书中最重要的「交易成本」概念，其实不仅适用于产品设计，还可以应用到各个领域，直至每个个体的具体决策中。新制度经济学视角下观察分析开源，也可以产生很多不同的视角。把开源社区当成产品来设计，会让贡献的流程异常清晰巧妙。这本书读起来稍有晦涩，但我个人非常喜欢，书中还写了俞军早期在滴滴所做的一些思考和案例，我非常推荐。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;程浩&lt;/strong&gt;：我推荐《世界是平的》这本书，这本书描述信息技术让社会生产方式发生重大变革。很多程序员都怀揣着改变世界的梦想，但当我们身处其中时，反而不以为意，这本书虽然已经出版很久，但是可以培养工程师的软性的思考，拓宽视野。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：我推荐《大空头》，这本书最好搭配《史上最伟大的交易》一起来看。这两本书都以 2008年次贷危机为背景。《大空头》中，基金经理 Michael Burry 最早地预测到了信用违约掉期（CDS） 会挂掉，在早期做了很多铺垫，整个过程非常曲折痛苦，尽管最后赚了一笔钱，但他的投资关系就崩了。《史上最伟大的交易》中，对冲基金经理约翰·保尔森在次贷危机中的收益超过一百亿美金，被誉为「史上最伟大的交易」。一个人再聪明、再有远见，也不一定有最好的结果，因为这个世界有其客观规律。当自己特别顺利的时候，我会提醒自己「人外有人」，这可能是因为正好踩上了时间点。&lt;/p&gt;
+
+&lt;h2 id=&quot;作为开源小白有什么适合新手的开源项目吗&quot;&gt;作为开源小白，有什么适合新手的开源项目吗？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：接下来是 Q&amp;amp;A 时间。第一个观众提问是：作为开源小白，有什么适合新手的开源项目吗？从今天的聊天中，已经有两个项目了：开源向量数据库 Milvus 和聊天机器人 Wechaty。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李卓桓&lt;/strong&gt;：如果你要做聊天机器人的自然语言处理，你肯定会遇到向量相似度匹配的问题，如果你要用到海量数据，那你肯定需要开源向量数据库 Milvus。如果能把 Milvus 和 Wechaty 两个项目结合起来，甚至可能可以做出像科幻电影《Her》里面一样逼真的效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：开源的道理很简单，可以总结为保持开放、保持多样。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：开源社区非常友善，新手不用紧张，欢迎你们加入开源。&lt;/p&gt;
+
+&lt;h2 id=&quot;你为什么跳出大厂出来创业&quot;&gt;你为什么跳出大厂，出来创业？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：下一个问题是，你们当中有很多都在大厂待过然后跳出大厂自己创业，是哪个时间点或者事件，促使你做出改变的？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;程浩&lt;/strong&gt;：大厂的优势是平台大，有很多通用、基础的问题等待我们解决，身边的同事和资源也很多，大厂对年轻人的成长有比较正面的影响；但是在大厂工作时间长了以后，我觉得碰到了天花板，思维上碰到了瓶颈。在这个节骨眼儿，要么个人选择更换业务，要么直接跳出这个平台。我就是在那个时刻，觉得自己想要做出改变，做一些技术以外的尝试。不存在哪个更好，只是每个人在自我的成长阶段中，对自己有一些期待，做出一些尝试。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：深有感触，我也有一些类似的经历。之前我陆陆续续服务的都是一些大型的机构，不是说这些大平台不好，而是我想做一些不一样的事情。&lt;/p&gt;
+
+&lt;h2 id=&quot;商业公司可以通过哪些方式吸引开源人才&quot;&gt;商业公司可以通过哪些方式吸引开源人才？&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;顾钧&lt;/strong&gt;：下一个观众提问是，现在有越来越多的商业公司开始做开源，需要一些资深人才来带动团队，那么商业公司可以通过哪些方式吸引开源人才？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;李卓桓&lt;/strong&gt;：根据我个人在 GitHub 上的经验，我有三种方法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一种，也是我最喜欢的方法是：我在 GitHub 上看到一个特别活跃的开发者，我就会好奇并想去了解他。有好几次，我点进他们的个人主页，发现写了很多优秀的技术文章，然后发现他们是一些公司的 CTO。Typeform 是一个对话式的表单，交互体验非常友好。我知道这个项目是因为他们的 CTO 在 GitHub 上超级活跃，我顺着这个人找到了他们的项目，然后成为他们的用户。&lt;/li&gt;
+  &lt;li&gt;另一种方式是，有时候我会收到一些 GitHub 找过来的招聘信息，这些招聘不是群发，显然是对我本人的经历和项目做了一些研究的。所以反之同理，创业公司可以在 GitHub 找一些和自己领域契合的项目，这些项目有哪些优秀的开发者？他们之前有哪些经历？我相信这种方式成功率也很高。&lt;/li&gt;
+  &lt;li&gt;第三种方式是，比如我对于高维向量检索方面的人才感兴趣，那我就在向量数据库 Milvus 的项目主页，看有哪些人为这个项目点了 Star，然后再在这些人中筛选、看他们的主页，然后很有诚意地发邮件就好了！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;李建盛&lt;/strong&gt;：如何「管理」好开源人才？过去的管理理论一般都是基于「人是需要监督的」，但是真正的开源人才是非常主动的、希望把代码写好。我们要对传统的管理方式做出改变，多元地衡量产出，而不是用硬性的 KPI 去衡量。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Source: Zilliz &lt;a href=&quot;https://mp.weixin.qq.com/s/hh2G7pvv5f0Osk_jHdd2KA&quot;&gt;想不到 HR 都在 GitHub 捞人！五位开源大牛分享成长经历&lt;/a&gt;
+欢迎在评论区回复留言你的想法，我们将选取点赞数量最高的评论，送出讲师们推荐的《匠人》《Chatbot从0到1》《俞军产品方法论》《世界是平的》《大空头》《神秘的程序员们》六本书籍！&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>huan</name></author><category term="interview" /><category term="zilliz" /><category term="milvus" /><category term="opensource" /><category term="news" /><summary type="html">「开源」如何帮你增加市场竞争力？ 离开大厂，「开源」如何成为一种新的创业模式？ 如何积累开源项目经验，打造一份完美的简历？ 商业公司吸引开源人才，有哪些妙招？</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-zilliz-milvus-open-source-panel/zilliz-1024.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-zilliz-milvus-open-source-panel/zilliz-1024.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OpenTEKr｜OSS Pioneer｜Interview with Huan Li</title><link href="https://wechaty.js.org/2021/10/28/opentekr-oss-pioneer-interview-huan/" rel="alternate" type="text/html" title="OpenTEKr｜OSS Pioneer｜Interview with Huan Li" /><published>2021-10-28T00:00:00+00:00</published><updated>2021-10-28T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/28/opentekr-oss-pioneer-interview-huan</id><content type="html" xml:base="https://wechaty.js.org/2021/10/28/opentekr-oss-pioneer-interview-huan/">&lt;p&gt;With 25 years of programming experience, Huan Li has gone from entrepreneurs to investors. He has practiced a variety of open source methods, and in the field of open source contributions, Huan Li is also a pioneer. Whether publishing open source projects with a cumulative total of more than 11,000 Stars on Github, or being invited by other open source organizations to become an Owner or a Maintainer, Huan Li has formed his own unique observation and experience of open source as a solution. This time it comes to “OSS Pioneer”, what new insights will Li Zhuohuan bring to everyone? The 1% energy of the open source community contribute every day, how to reverse the giant Microsoft’s contempt on Linux to integrate Linux into its own system? How does the open source project Wechaty arouse everyone’s enthusiasm for collaborative development? Let’s find out.&lt;/p&gt;
+
+&lt;h2 id=&quot;video-playback&quot;&gt;Video Playback&lt;/h2&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/v0FjLrZ0zfw&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Today let’s meet Zhuohuan Li 李卓桓. #OpenTEKr #OSSPioneer He is the founder of #Wechaty and an evangelist of #Chatbot. He is also an angel investor and a mentor at 璞跃中国 Plug and Play China Venture Partner. #opensource&lt;/p&gt;
+
+&lt;h2 id=&quot;about-opentekr&quot;&gt;About OpenTEKr&lt;/h2&gt;
+
+&lt;p&gt;OpenTEKr has been sharing cutting-edge knowledge and insights via a series of interviews with founders, initiators, mentors, and experts within the open-source community. In its latest efforts, the OSS Pioneer series of interviews are being conducted starting from December in 2020, with a goal to gather 100 thought-leadersand contributors in China’s open-source space.&lt;/p&gt;
+
+&lt;p&gt;OpenTEKr is a non-for-profit open organization with advancing open-source software and open hardware technology at its core, dedicated to shaping a sustainable open technology ecosystem. We envision a better tomorrow for all mankind with individuals and organizations inspired and empowered to realize their aspirations through transformative technologies and world-class innovation. For more detail, please visit www.opentekr.com&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Source: &lt;a href=&quot;https://www.linkedin.com/feed/update/urn:li:activity:6859768644856098816/&quot;&gt;OpenTEKr&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>huan</name></author><category term="interview" /><category term="opentekr" /><category term="opensource" /><category term="news" /><summary type="html">With 25 years of programming experience, Huan Li has gone from entrepreneurs to investors. He has practiced a variety of open source methods, and in the field of open source contributions, Huan Li is also a pioneer. Whether publishing open source projects with a cumulative total of more than 11,000 Stars on Github, or being invited by other open source organizations to become an Owner or a Maintainer, Huan Li has formed his own unique observation and experience of open source as a solution. This time it comes to “OSS Pioneer”, what new insights will Li Zhuohuan bring to everyone? The 1% energy of the open source community contribute every day, how to reverse the giant Microsoft’s contempt on Linux to integrate Linux into its own system? How does the open source project Wechaty arouse everyone’s enthusiasm for collaborative development? Let’s find out.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-opentekr-oss-pioneer-interview-huan/open-tekr-huan.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-opentekr-oss-pioneer-interview-huan/open-tekr-huan.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">微信机器人上线自动回复，OSSChat 助力开源社区运营</title><link href="https://wechaty.js.org/2021/10/28/osschat-is-what-you-need-for-opensouce-community-operations/" rel="alternate" type="text/html" title="微信机器人上线自动回复，OSSChat 助力开源社区运营" /><published>2021-10-28T00:00:00+00:00</published><updated>2021-10-28T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/28/osschat-is-what-you-need-for-opensouce-community-operations</id><content type="html" xml:base="https://wechaty.js.org/2021/10/28/osschat-is-what-you-need-for-opensouce-community-operations/">&lt;p&gt;大家好，我是&lt;a href=&quot;http://github.com/chatopera/cskefu&quot;&gt;春松客服开源社区首席运营&lt;/a&gt;，我们常常发现，微信群，尤其是人多的时候，超过 30 人，就变成了不能“谈事情”的地方，&lt;strong&gt;很多想法匆匆而过&lt;/strong&gt;。一些是非常值得追踪下去的想法，背后有一个很有必要做的任务，可是微信群，或者在微信上，我们不专注。&lt;/p&gt;
+
+&lt;h2 id=&quot;运营人员苦不堪言&quot;&gt;运营人员苦不堪言&lt;/h2&gt;
+
+&lt;p&gt;对于以上，我们常常的解决思路就是：运营的人，一次次回答同样的问题；运营的人，叮嘱或者亲自，在 GitHub 上建立一个 Issue 工单。把这个事情记录下来，GitHub 或者其它什么地方，有时候，我们甚至会建立一个新群。然而问题还是存在，群里的有价值的对话数据，没有放在一个公开的地方，能被搜索到的地方。&lt;strong&gt;用户不喜欢联系你，用户喜欢自助式的服务&lt;/strong&gt;。假如，用户能在搜索引擎上，或者 GitHub Issue 上直接搜索到，会是一个多么酷的事情。简而言之，微信群运营，苦不堪言。每天回答的重复的问题，浪费了我们多少时间？&lt;/p&gt;
+
+&lt;h3 id=&quot;一次次重复回答&quot;&gt;一次次重复回答&lt;/h3&gt;
+
+&lt;p&gt;在微信群人多的时候，也变成了一个效率极低的地方，比如每个新人进群，总会问之前重复的问题。&lt;/p&gt;
+
+&lt;h3 id=&quot;能开个工单说吗&quot;&gt;能开个工单说吗&lt;/h3&gt;
+
+&lt;p&gt;另外一个问题是，&lt;strong&gt;用户不喜欢开工单&lt;/strong&gt;。我们过着快节奏的生活，每个事情都在匆匆之间，Everything is in a rush. 并不是每个事情都值得开工单，有的时候就是闲聊，而当一个任务浮现，我们就需要一个工单，一个有状态有 Owner 的记录，可以流转、委派、跟踪、评论等等。工单意义重大，工单是一个承诺，工单是一个明确的需要输出的工作清单。我们可以容许工单开始写的不怎么样，但随后，我们就持续的跟进，这是工单的奇妙之处。以前我用 Wunderlist，现在使用微软 To-do，有了一个记录，执行力一下子就提升了。但是，在微信群，我们聊的热火朝天，口干舌燥，待到要创建一个任务，就突然艰巨了起来。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-6.webp&quot; alt=&quot;osschat-is-what-you-need 6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从打开 GitHub Issue 到粘贴对话，到保存。动作很简单，但是只有少数人做这一步。相信我，只要开出工单，事情就会得到解决，甚至这个工单，后来发现，是一项不值得做的工作，那么这也是一项收获。&lt;strong&gt;一方面，有了工单，对我们工作很有好处；一方面，很少有人去开工单。&lt;/strong&gt; 我们有一些惰性，我们甚至从文化上分析这个事情的合理性，多么荒谬。&lt;/p&gt;
+
+&lt;p&gt;你告诉我一个困难的工作，我给你开个工单，这个工作会解决，至少会有起色。你在微信群里告诉我一个事情，然后明天和下周，你得多提醒我。&lt;strong&gt;人的大脑，有它工作的原理。工单帮助我们建立一种信守承诺的文化，工单帮助大家有更多信任。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;提升执行力的秘密是，做出第一步&lt;/strong&gt;：从微信的讨论出发，然后建立出工单，开始执行。&lt;/p&gt;
+
+&lt;h2 id=&quot;数据隐藏着价值&quot;&gt;数据隐藏着价值&lt;/h2&gt;
+
+&lt;p&gt;另外一项，非常非常重要的事情，非常重要！&lt;strong&gt;数据隐藏着你项目成功的秘密&lt;/strong&gt;，大家在微信里每天聊，你知道他们关注什么吗？你知道现在你应该怎么安排任务的优先级吗？&lt;/p&gt;
+
+&lt;p&gt;用户常问的问题，我们整理成 FAQs 常见问题列表，用户常要做的流程，我们能不能用聊天机器人多轮对话解决？用户关心的事情，我们查看关键词。&lt;/p&gt;
+
+&lt;p&gt;这些都依赖于数据，而这些数据在微信群里，这些数据弄好了，你的项目可以在 90 天内活跃 10 倍！我没有过度承诺的习惯 :-)，我说的是&lt;strong&gt;聊天数据的分析，可以帮助你真正做到以“客户”为中心&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;微信不创新&quot;&gt;微信不创新&lt;/h2&gt;
+
+&lt;p&gt;8 年前，扎克伯克说经常的看微信，学习微信的创新，看看人家这劲头，汉语现在是呱呱流利，而现在，你知道吗？ Facebook Messenger 的创新，已经领先了微信一个产品世代！ Messenger 对 AR，Chatbot 等 Metaverse 元宇宙级别的场景做到了相当不错的体验。&lt;strong&gt;微信不创新&lt;/strong&gt;，如果你体验了 Messenger 对 Chatbot 的交互的支持，你会和我有同感。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-1.webp&quot; alt=&quot;osschat-is-what-you-need 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;我们就像微信奴隶一样，将数据给了微信，微信挖掘这些价值来榨干我们。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;英雄降临&quot;&gt;英雄降临&lt;/h2&gt;
+
+&lt;p&gt;事情不会这样结束，历史的车轮滚滚向前，终于有一天，一些人觉醒了：&lt;strong&gt;拿回我们的数据，我们要创新！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-2.webp&quot; alt=&quot;osschat-is-what-you-need 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wechaty，非常酷，使用 RPA 将微信变成了可编程微信，使用代码管理你的联系人、消息和微信群，对，你的，都是你的，中间那个微信是你的。然后是 Chatopera，非常酷，是定制机器人的大脑，做智能问答和对话流程。这样，我们就可以和 GitHub 集成了，让微信群和 Github 工单能自由的同步。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-plain&quot;&gt;我有一个梦想，有一天，我在微信群里的聊天的数据，我可以分析出大家常聊什么，这样我可以做知识库机器人自动回答；
+
+我有一个梦想，有一天，GitHub Issue 的创建和评论的事件，我可以在微信群自动的得到通知；
+
+我有一个梦想，有一天，我只消说，“以上创建工单”，就可以将微信群的聊天记录自动创建为 GitHub Issue；
+
+我有一个梦想，有一天，我可以和她一起 ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;好的，继续说工作的事情，这个梦想，可以实现。非常的酷的想法，有点激动，这些目标可以使用 &lt;strong&gt;Wechaty + Chatopera + 微信 + GitHub&lt;/strong&gt; 实现，但是工作量比较大，此处省略十万字。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-3.webp&quot; alt=&quot;osschat-is-what-you-need 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在二十多位贡献者的参与下，这个想法终于实现了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-4.webp&quot; alt=&quot;osschat-is-what-you-need 4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kaiyuanshe/osschat&quot;&gt;https://github.com/kaiyuanshe/osschat&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2021-10-14osschat-自动回复功能上线&quot;&gt;2021-10-14，OSSChat 自动回复功能上线&lt;/h2&gt;
+
+&lt;p&gt;自 2020 年 3 月，OSSChat 云服务上线，但是直到 2021 年 10 月 14 日，OSSChat 的自动回复功能，才做好，因为工作量确实比较大。现在我们只需要在微信群里说：以上五条开工单，那么对应的 GitHub Issue 就会开出来发群里。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-5.webp&quot; alt=&quot;osschat-is-what-you-need 5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是我们在春松客服开发者群里的一个对话，一句话，GitHub Issue 就创建了，香不香？激动不激动？羡慕不羡慕？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;一个开工单的过程节省 5 分钟，并最终让执行力拔高一个层次。&lt;/strong&gt; 一旦一个复杂流程的第一步启动，那么流程有它自己的执行力。&lt;/p&gt;
+
+&lt;h2 id=&quot;我要使用-osschat&quot;&gt;我要使用 OSSChat&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;接受托管&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;云服务接入，只需要联系登记和授权。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kaiyuanshe/osschat/wiki/How-to-use-osschat&quot;&gt;How to use osschat&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不托管，自己打理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;自己来，运行服务并配置。工作量是接受托管的 20 倍！欢迎来折腾！&lt;/p&gt;
+
+&lt;p&gt;参考 &lt;a href=&quot;https://github.com/kaiyuanshe/osschat&quot;&gt;README.md 文档&lt;/a&gt; &lt;a href=&quot;https://github.com/kaiyuanshe/osschat&quot;&gt;https://github.com/kaiyuanshe/osschat&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;发现更多&quot;&gt;发现更多&lt;/h2&gt;
+
+&lt;p&gt;微信机器人上线自动回复，OSSChat 助力开源社区运营。在 2021 年 10 月 14 日晚，OSSChat 项目组做了一次在线分享，为已经上线了 OSSChat 的用户第一次介绍自动开 Issue 等功能。&lt;/p&gt;
+
+&lt;p&gt;For visiters come from China who can not visit YouTube.com, this video is also hosted on bilibili.com Video:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1PQ4y1S7iZ&quot;&gt;微信机器人上线自动回复，OSSChat 助力开源社区运营 | Wechaty @ bilibili&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/qWxDnSaa29s&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/screenshot-7.webp&quot; alt=&quot;osschat-is-what-you-need 7&quot; /&gt;&lt;/p&gt;</content><author><name>hailiang-wang</name></author><category term="project" /><category term="osschat" /><category term="chatopera" /><category term="github" /><category term="utility" /><summary type="html">大家好，我是春松客服开源社区首席运营，我们常常发现，微信群，尤其是人多的时候，超过 30 人，就变成了不能“谈事情”的地方，很多想法匆匆而过。一些是非常值得追踪下去的想法，背后有一个很有必要做的任务，可是微信群，或者在微信上，我们不专注。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/cover.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-osschat-is-what-you-need-for-opensouce-community-operations/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Google Season of Docs 2021 Final Blog - Tutorials</title><link href="https://wechaty.js.org/2021/10/20/wechaty-tutorials-final-blog/" rel="alternate" type="text/html" title="Google Season of Docs 2021 Final Blog - Tutorials" /><published>2021-10-20T00:00:00+00:00</published><updated>2021-10-20T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/20/wechaty-tutorials-final-blog</id><content type="html" xml:base="https://wechaty.js.org/2021/10/20/wechaty-tutorials-final-blog/">&lt;p&gt;We have been a part of &lt;strong&gt;Google Season of Docs 2021&lt;/strong&gt; for creating and improving the &lt;strong&gt;Wechaty documentation&lt;/strong&gt;, specifically the &lt;a href=&quot;https://wechaty.js.org/docs/tutorials/&quot;&gt;Tutorials&lt;/a&gt; section. It was an amazing journey of &lt;strong&gt;17 weeks&lt;/strong&gt; (roughly 4 months) contributing to the Wechaty documentation, during which we got an opportunity to try out and learn a lot about the Wechaty bots. When we initially started contributing to the Docs, we didn’t have any idea about how Wechaty bots can be created that runs on various instant messaging (IM) systems like &lt;a href=&quot;https://www.whatsapp.com/&quot;&gt;WhatsApp&lt;/a&gt; and &lt;a href=&quot;https://www.wechat.com/&quot;&gt;Wechat&lt;/a&gt;. But gradually we became comfortable with building the bots and started building the documentation.&lt;/p&gt;
+
+&lt;p&gt;A brief introduction about us is available below.&lt;/p&gt;
+
+&lt;h2 id=&quot;souvik-biswas&quot;&gt;Souvik Biswas&lt;/h2&gt;
+
+&lt;p&gt;I am Souvik Biswas, currently pursuing a B.Tech degree in Computer Science and Engineering from &lt;strong&gt;IIIT Kalyani&lt;/strong&gt; in India. I am a freelance technical writer of &lt;a href=&quot;https://blog.codemagic.io/&quot;&gt;Codemagic&lt;/a&gt; and &lt;a href=&quot;https://blog.logrocket.com/&quot;&gt;LogRocket&lt;/a&gt; Blog, and a passionate mobile app developer. You can also find some of my articles on &lt;a href=&quot;https://medium.com/@sbis1999&quot;&gt;Medium&lt;/a&gt;, and explore my projects on &lt;a href=&quot;https://github.com/sbis04&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;shwetal-soni&quot;&gt;Shwetal Soni&lt;/h2&gt;
+
+&lt;p&gt;I am Shwetal Soni, currently pursuing B.Tech in Computer Science and Engineering from &lt;strong&gt;NIT Hamirpur&lt;/strong&gt; in India. I am interested in UI/UX Design, Frontend web development and recently I’m also exploring the field of Technical Writing. Recently I have only written one technical blog on &lt;em&gt;writing smart contracts on Tezos Blockchain&lt;/em&gt;. You can check it out here &lt;a href=&quot;https://shwetalsoni.medium.com/building-your-first-dapp-on-tezos-part-1-writing-smart-contract-on-smartpy-d7cdf27476f9&quot;&gt;Medium&lt;/a&gt;. You can also find my projects on &lt;a href=&quot;https://github.com/shwetalsoni/&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-video-presentation&quot;&gt;Final Video Presentation&lt;/h2&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/lDaBTTSeXck&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Our main goal was to improve the Wechaty Tutorials documentation and make it easier to follow for beginner users of Wechaty. We have added step by step guide for building each Wechaty bot from scratch and added interactive CodeSandboxes using which users can try out the bot directly from within the documentation page.&lt;/p&gt;
+
+&lt;p&gt;Here’s a brief overview of our tasks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Refactor the overall Tutorials documentation&lt;/li&gt;
+  &lt;li&gt;Add / improve the step-by-step instructions&lt;/li&gt;
+  &lt;li&gt;Add interactive CodeSandbox&lt;/li&gt;
+  &lt;li&gt;Screenshots / GIF of the bot running on a device&lt;/li&gt;
+  &lt;li&gt;Add various bots building tutorials to Examples&lt;/li&gt;
+  &lt;li&gt;Create a video tutorial&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Earlier the tutorial pages lacked a proper structure, so it might not be easy to follow and build a bot for a user to is new to Wechaty. So, we have introduced a structure that is followed on every documentation page, more information about it is below.&lt;/p&gt;
+
+&lt;h2 id=&quot;structure-of-tutorial-pages&quot;&gt;Structure of tutorial pages&lt;/h2&gt;
+
+&lt;p&gt;This is an overview of the final structure for each of the tutorial pages that we have followed so that all the tutorials are consistent and easy to follow for any user.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction:&lt;/strong&gt; Highlights the goal of the tutorial.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Try out the bot:&lt;/strong&gt; Contains the CodeSandbox of the bot along with an editable link.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; List of the required tools in order to follow the tutorial.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Getting started:&lt;/strong&gt; Covers the installation step of the required tools and how users can try out the bot locally by cloning its GitHub repo.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Building the bot:&lt;/strong&gt; The main section where we include the step by step guide&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Running the bot:&lt;/strong&gt; Contains commands for running the bot on the user’s system&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bot demonstration:&lt;/strong&gt; Describes the commands that can be used within the bot along with some screenshots/GIFs if required.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Conclusion &amp;amp; References:&lt;/strong&gt; Any links that the users can check out for knowing more about a particular concept related to the bot.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;project-goals&quot;&gt;Project Goals&lt;/h2&gt;
+
+&lt;p&gt;We managed to complete all the GSoD tasks as per our initial proposal. In 17 weeks, we have done a total of &lt;strong&gt;40 pull requests&lt;/strong&gt; which consist of 33 weekly PRs (addition or improvement of documentation pages that we had included in our initial proposal), and 7 miscellaneous PRs (fixes that we have done to some of the pages).&lt;/p&gt;
+
+&lt;p&gt;We have also created a video tutorial for building the most basic Wechaty bot, called the &lt;a href=&quot;https://wechaty.js.org/docs/tutorials/#build-your-first-chatbot-with-wechaty&quot;&gt;Ding Dong Bot&lt;/a&gt;, from scratch.&lt;/p&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/LHT49Q_x5D8&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;You can take a look at our contributions by going to the respective links present in this section.&lt;/p&gt;
+
+&lt;p&gt;You can find all PRs done by us in the links below:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pulls?q=is%3Apr+author%3Ashwetalsoni&quot;&gt;Shwetal’s PRs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pulls?q=is%3Apr+author%3Asbis04&quot;&gt;Souvik’s PRs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here’s a complete list of all the contributions that we have done during the GSoD season:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Week&lt;/th&gt;
+      &lt;th&gt;Pull Requests&lt;/th&gt;
+      &lt;th&gt;Technical Writer&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Add instructions and interactive sandbox for Vorpal &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/779&quot;&gt;#779&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Update the Vorpal demo screenshot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/780&quot;&gt;#780&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Improve Vorpal docs &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/791&quot;&gt;#791&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Improve and update Vorpal bot steps &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/882&quot;&gt;#882&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Runnning Locally (Ding Dong bot) &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/888&quot;&gt;#888&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Getting Started Overview &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/935&quot;&gt;#935&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Tutorials Overview &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/934&quot;&gt;#934&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Add installation page under tutorials &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/905&quot;&gt;#905&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Add Google Cloud Shell tutorial &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/922&quot;&gt;#922&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Running Ding Dong bot on gitpod &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/923&quot;&gt;#923&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Update Wechaty Plugin Overview page under Tutorials &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/957&quot;&gt;#957&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Add tutorial for EventLogger plugin &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/963&quot;&gt;#963&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;Add tutorial for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QR code terminal plugin&lt;/code&gt; &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/969&quot;&gt;#969&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;Add tutorial for Heartbeat plugin &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/985&quot;&gt;#985&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;Using Redux with wechaty overview &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/989&quot;&gt;#989&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;Add Redux: Ducks proposal style docs &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1126&quot;&gt;#1126&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;Add Starter Bot under Examples: Basic &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1076&quot;&gt;#1076&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;Improve the Contact Bot page &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1099&quot;&gt;#1099&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;Updated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ding dong bot&lt;/code&gt; under examples &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1103&quot;&gt;#1103&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;Updated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;World's Shortest Chatbot&lt;/code&gt; under examples &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1104&quot;&gt;#1104&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Created tutorial for room-bot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1131&quot;&gt;#1131&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Tutorial for examples/advanced/busy-bot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1134&quot;&gt;#1134&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Update the Friend bot page &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1138&quot;&gt;#1138&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;Add tutorial for Media File Bot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1155&quot;&gt;#1155&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Tutorial for using vanilla redux with wechaty &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1165&quot;&gt;#1165&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Add tutorial for Ctrl C Signal Bot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1204&quot;&gt;#1204&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;Tutorial for Tuling123 Bot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1207&quot;&gt;#1207&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;Add video demo of ding ding bot &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1249&quot;&gt;#1249&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;Add missing badges to Event Logger plugin page &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1250&quot;&gt;#1250&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;Add missing badges to Heartbeat plugin page &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1251&quot;&gt;#1251&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/sbis04&quot;&gt;Souvik Biswas&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;Updated links in tutorials overview page and removed empty pages from examples section &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1254&quot;&gt;#1254&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;Added missing badges to QR code terminal plugin &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1253&quot;&gt;#1253&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;Update order of language display &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/1252&quot;&gt;#1252&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/shwetalsoni&quot;&gt;Shwetal Soni&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!--- Merge Status Badges ---&gt;
+&lt;!--- they are linked to the above last columns of the table, 
+      to add just use the correct PR number and use the same format ---&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The current version of &lt;a href=&quot;https://wechaty.js.org/&quot;&gt;Wechaty documentation&lt;/a&gt; consists of a lot of easy-to-follow tutorials for building Wechaty bots from scratch. Users will find relevant links to all the resources required for building the bot by themselves and can also run some of the bots directly on the documentation page inside the CodeSandboxes that we have included.&lt;/p&gt;
+
+&lt;p&gt;Thanks to all the mentors (&lt;a href=&quot;https://github.com/huan&quot;&gt;Huan&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/lijiarui&quot;&gt;Rui&lt;/a&gt;) and volunteers (&lt;a href=&quot;https://github.com/Rohitesh-Kumar-Jain&quot;&gt;Rohitesh&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/proudofsimin&quot;&gt;Simin&lt;/a&gt;) for helping us during the documentation period and making our GSoD 2021 season successful.&lt;/p&gt;</content><author><name>sbis04</name></author><category term="gsod" /><category term="google" /><category term="gsod" /><category term="2021" /><category term="docs" /><category term="tutorials" /><category term="project" /><summary type="html">We have been a part of Google Season of Docs 2021 for creating and improving the Wechaty documentation, specifically the Tutorials section. It was an amazing journey of 17 weeks (roughly 4 months) contributing to the Wechaty documentation, during which we got an opportunity to try out and learn a lot about the Wechaty bots. When we initially started contributing to the Docs, we didn’t have any idea about how Wechaty bots can be created that runs on various instant messaging (IM) systems like WhatsApp and Wechat. But gradually we became comfortable with building the bots and started building the documentation.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-wechaty-tutorials-final-blog/wechaty-tutorials-final-cover.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-wechaty-tutorials-final-blog/wechaty-tutorials-final-cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">献给新生女儿的礼物：基于wechaty和语义开放平台打造的育儿机器人</title><link href="https://wechaty.js.org/2021/10/19/jyy-chatbot-blog/" rel="alternate" type="text/html" title="献给新生女儿的礼物：基于wechaty和语义开放平台打造的育儿机器人" /><published>2021-10-19T00:00:00+00:00</published><updated>2021-10-19T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/19/jyy-chatbot-blog</id><content type="html" xml:base="https://wechaty.js.org/2021/10/19/jyy-chatbot-blog/">&lt;p&gt;最近的生活里多了个女儿(蒋一一)，为了数字化育儿，我写了这个机器人，可以自动通过微信记录小宝宝的日常起居，将结构化育儿数据记录下来，以达到数据驱动育儿。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;关于我：毕业于复旦/剑桥自然语言处理组。2013-2018年在创业公司出门问问带领团队负责语义分析算法、开放平台开发，支持了包括了谷歌、江淮、微鲸、大众等众多客户。现在在WhatsApp负责假新闻、反广告机器学习开发。欢迎关注我&lt;a href=&quot;https://www.zhihu.com/people/xjiangxjxjxjx&quot;&gt;知户主页&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;需求如何养娃&quot;&gt;需求：如何养娃&lt;/h2&gt;
+
+&lt;p&gt;新生儿无法用完整语言来表达自己的需求，因此作为父母，除了”哭闹”这样的被动信号，我们也需要“主动记录”宝宝日常的一些行为作息数据，来确保宝宝健康成长。这些数据包括：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;喂奶量&lt;/em&gt;: 新生儿在生长初期的喂奶量相对固定的(虽然存在个体差异)，因此需要追踪宝宝每天的喂奶量和喂奶频率。例如，在我开发机器人的时候，我女儿蒋一一正好两周，她需要每隔3~4小时左右喂一次奶，每天6~8次左右。&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;尿布&lt;/em&gt;: 尿布的量是为了追踪宝宝每日是否摄入了足够的营养和水分。例如，蒋一一需要每天至少6片以上的湿尿布，否则可能意味着水分摄入不足。&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;睡眠&lt;/em&gt;: 为了追踪宝宝每日睡眠情况。比如，蒋一一每天大约要睡15小时左右，这样才能保证她的大脑和身体的发育。同时，充足的睡眠也保证了父母的有足够的时间追剧打王者荣耀。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因此，为了科学养娃，我决定写这个微信机器人，允许用户的自然语言输入，并自动转换成结构化数据，以便之后分析处理:&lt;/p&gt;
+
+&lt;p&gt;比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-lang-text&quot;&gt;# 输入
+蒋一一上午9点喝了30毫升的奶
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-lang-text&quot;&gt;# 输出
+event: 喂奶
+time: 2021-10-19 09:00:00
+quantity: 30
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;技术设计思路语义开放平台&quot;&gt;技术设计思路：语义开放平台&lt;/h2&gt;
+
+&lt;p&gt;从自然语言文本中提取关键信息，简单的当然可以用正则表达式来实现，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-lang-text&quot;&gt;(?&amp;lt;time&amp;gt;(上午|下午)?\d+点).*(?&amp;lt;event&amp;gt;喂奶|奶粉|睡觉|起床|拉屎|拉尿).*(?&amp;lt;quantity&amp;gt;\d+(毫升|克))?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但显然用正经的语义分析算法才是更好的选择。这里的语义分析算法特指任务型对话使用的，基于&lt;em&gt;意图分类&lt;/em&gt;（分类算法）和&lt;em&gt;语义槽提取&lt;/em&gt;（序列标注算法）的数据驱动的语义分析算法。详情可以百度/谷歌关键字&lt;em&gt;NLU&lt;/em&gt; &lt;em&gt;语义分析&lt;/em&gt; &lt;em&gt;任务型对话&lt;/em&gt;，或者直接看这篇&lt;a href=&quot;https://bbs.huaweicloud.com/blogs/detail/200427&quot;&gt;科普文&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;相比于之前基于规则的识别，基于机器学习模型的算法有以下优势：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;识别范围更广&lt;/em&gt;：不需要严格规则匹配，有非常大的自由度来应对不同遣词造句。&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;易于维护扩展&lt;/em&gt;：特别是对于复杂语义系统，规则的数量会指数级增长，以至于不可维护。而基于机器学习的语义分析，只需要提供带标注的训练文本，机器学习算法会自动的搞定剩下的。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;并且，在2021年的当下，基础的语义分析都已经平台化了，这意味着：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;不需要从头开始训练模型，可以完全图形化界面配置自己的语义分析。&lt;/li&gt;
+  &lt;li&gt;对于一些常见任务有现成的处理方法，比如时间（今天、明天9点、下周五），度量衡（三十毫升，40°， 一米半）&lt;/li&gt;
+  &lt;li&gt;也可以方便的拓展到带上下文的对话语义分析。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;在这个任务里，我使用的是&lt;a href=&quot;https://ai.chumenwenwen.com/pages/home&quot;&gt;出门问问的语义开放平台&lt;/a&gt;。市面上有很多其他的语义分析开放平台（比如百度、科大讯飞、Facebook的wit.ai)，我选择出门问问这个平台的原因很简单，因为是我自己写的。&lt;/p&gt;
+
+&lt;p&gt;具体的使用方法可以参见平台的文档，总之，我大概花了10分钟的，提交了一些训练数据，就自动得到了一个可以用的语义分析模型，并且支持HTTP GET直接调用, 实际调用如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-lang-text&quot;&gt;// input: 蒋一一喂奶了30毫升
+
+// output:
+&quot;semantic&quot;: {
+    &quot;slots&quot;: {
+        &quot;event_type&quot;: [
+            {
+                &quot;prob&quot;: 0.8787958032333055,
+                &quot;index&quot;: {
+                    &quot;3-5&quot;: &quot;喂奶&quot;
+                },
+                &quot;raw_data&quot;: &quot;喂奶&quot;,
+                &quot;norm_value&quot;: &quot;喂奶&quot;
+            }
+        ],
+        &quot;quantity&quot;: [
+            {
+                &quot;prob&quot;: 0.9999999999999982,
+                &quot;index&quot;: {
+                    &quot;6-10&quot;: &quot;30毫升&quot;
+                },
+                &quot;raw_data&quot;: &quot;30毫升&quot;,
+                &quot;norm_value&quot;: &quot;30&quot;
+            }
+        ]
+    },
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;技术设计思路-微信机器人&quot;&gt;技术设计思路: 微信机器人&lt;/h2&gt;
+
+&lt;p&gt;相比语义开放平台，微信API的部分就比较简单直接。&lt;/p&gt;
+
+&lt;p&gt;我直接参考了wechaty的ding-dong-bot.js代码，直接把&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onMessage&lt;/code&gt;加入对出门问问开放平台的调用，然后就可以写入GoogleDoc数据存储以便之后分析。详细代码我会更新在我的&lt;a href=&quot;https://github.com/jxitc/jyy_bot&quot;&gt;代码仓库&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;不过，在前期调研的过程中，也看了很多不同的微信代码库，包括以前用过的itchat也无法登录个人微信了。除了其他的基于dll代码注入的方法，wechaty是我尝试下来唯一能用的API了。不过长期来讲，利用个人微信号来做机器人本来就是风险很大的事情，所以我在代码设计的时候也做了抽象封装，便于如果真的个人微信API不能用的情况下，方便移植到其他平台（微信公众号、企业微信等等）。&lt;/p&gt;
+
+&lt;h2 id=&quot;延伸是否存在商业价值&quot;&gt;延伸：是否存在商业价值&lt;/h2&gt;
+
+&lt;p&gt;这个小机器人本身难度不是很大，它能替代的事情也无非是帮忙记录带娃过程中的一些数据而已，甚至不比手动记录或者excel记录方便多少。&lt;/p&gt;
+
+&lt;p&gt;但我觉得这个项目更重要的意义是打通了微信工作流，通过自然语言处理的方式将平时的自然语言转换成计算机可以处理的结构化语义，这样就可以在此基础上搭建各种自动化流程。&lt;/p&gt;
+
+&lt;p&gt;各种智能客服、RPA机器人平台也就是为了这个愿景而创造出来的。不过这些基于通用场景的平台工具，在有些时候仍然缺乏灵活性以支持自己的实际场景。&lt;/p&gt;
+
+&lt;p&gt;因此，我想通过这个小项目，探索出来一套低成本的DIY自动化工作流程，以便之后复制到更多的个人工作流中。&lt;/p&gt;</content><author><name>jxitc</name></author><category term="tutorial" /><category term="opensource" /><summary type="html">最近的生活里多了个女儿(蒋一一)，为了数字化育儿，我写了这个机器人，可以自动通过微信记录小宝宝的日常起居，将结构化育儿数据记录下来，以达到数据驱动育儿。 关于我：毕业于复旦/剑桥自然语言处理组。2013-2018年在创业公司出门问问带领团队负责语义分析算法、开放平台开发，支持了包括了谷歌、江淮、微鲸、大众等众多客户。现在在WhatsApp负责假新闻、反广告机器学习开发。欢迎关注我知户主页。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-jyy-chatbot-blog/jyy.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-jyy-chatbot-blog/jyy.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">今年的 COSCon 中国开源年会，让我们聊点不一样的</title><link href="https://wechaty.js.org/2021/10/12/kai-yuan-she-2021/" rel="alternate" type="text/html" title="今年的 COSCon 中国开源年会，让我们聊点不一样的" /><published>2021-10-12T00:00:00+00:00</published><updated>2021-10-12T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/12/kai-yuan-she-2021</id><content type="html" xml:base="https://wechaty.js.org/2021/10/12/kai-yuan-she-2021/">&lt;p&gt;人们常常说，在熬过了数十年寒冬，2020 -2021 我们终于迎来了本土开源的拐点，国家政策的引导、基础软件的崛起、开放协作精神的觉醒……各种各样的数据报告也无一不支撑着这一观点。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/wechaty/wechaty&quot;&gt;Wechaty&lt;/a&gt; 自创建以来坚持深根于Conversation RPA SDK领域，目前Star数量 11000+，支持微信、钉钉、飞书、WhatsApp、Gitter以及WhatsApp等多IM平台，此外也支持多种不同的编程语言，如JavaScript/TypeScript、Python、Java、Go、Scala等，只需要行代码即可开发出聊天机器人。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://wechaty.js.org/img/wechaty-logo.svg&quot; alt=&quot;wechaty-logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第六届中国开源年会终于在10.30号&amp;amp;10.31号开始了，此次Wechaty社区也积极参与此次活动，分别有如下分享：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;《Wechaty 开源社区文档协作 Google Season of Docs 实践分享》 ~ from &lt;a href=&quot;https://wechaty.js.org/contributors/huan&quot;&gt;Huan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;《OSS.Chat - 通往 Apache Way 的一道虹桥》 ~ from &lt;a href=&quot;https://wechaty.js.org/contributors/lijiarui&quot;&gt;jiarui&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;《基于wechaty和paddlepaddle的智能对话机器人》 ~ from &lt;a href=&quot;https://wechaty.js.org/contributors/wj-mcat&quot;&gt;wj-Mcat&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;非常欢迎大家届时参加，观看不同领域的实践经验分享。以下是COSCon’21的相关介绍。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;| 作者：COSCon’21 组委会
+| 编辑：钱英宇
+| 设计：朱亿钦
+| 责编：王玥敏
+&lt;a href=&quot;https://mp.weixin.qq.com/s/vxObDpoTqc810hVwr34Xhg&quot;&gt;原文地址&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GitHub 2015 - 2020 年事件日志量、活跃仓库数量、活跃账号数量总体情况&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-kai-yuan-she-2021/repo-trend.webp&quot; alt=&quot;GitHub 2015 - 2020 年事件日志量、活跃仓库数量、活跃账号数量总体情况&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-kai-yuan-she-2021/&quot; alt=&quot;摘自开源社《GitHub 2020 数字洞察报告》&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今年我被委以重任，负责中国开源年会主论坛的出品，这让我既兴奋又惶恐，我思考着，站在这一行业发展的“历史拐点”，我们到底要和大家聊些什么？我们渴望做出真正有意义又有特色的优质内容。&lt;/p&gt;
+
+&lt;p&gt;思考后，我和我们开源社理事长庄表伟老师达成共识，今年主论坛的策划将围绕以下几个关键词展开 —— &lt;strong&gt;多样性、跨学科、对话未来、开心开源&lt;/strong&gt;。帮助更多人入门开源！&lt;/p&gt;
+
+&lt;p&gt;开源的历程筚路蓝缕，开源的未来充满机遇与挑战，然而由于热爱开源，我们能一路开心地坚持走下去。今年大会的主题是&lt;strong&gt;开心开源&lt;/strong&gt;，我们希望能将&lt;strong&gt;「为何开源是开心的？什么样的开源叫开心？如何参与开源才能开心？」&lt;/strong&gt;的理念与多样化的实践，清晰地分享给更广大的观众。&lt;/p&gt;
+
+&lt;h2 id=&quot;第一篇章&quot;&gt;第一篇章&lt;/h2&gt;
+
+&lt;p&gt;今年是 Linux 诞生的第 30 个年头，回望“激荡三十年”，在主会场的【第一篇章】，我们计划从技术、文化、社区、到商业，与大家聊聊“&lt;strong&gt;开源从哪里来？&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;center&gt;这一行需要居中&lt;/center&gt;
+&lt;center&gt;第一篇章：激荡三十年（开源的 1991-2021)&lt;/center&gt;
+
+&lt;center&gt;计算机技术发展（开源技术发展）&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;开源文化的兴起&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;开源社区的诞生与繁荣&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;开源商业：从饱受争议到崭露头角&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;圆桌：激荡三十年，开源带给人们的启发&lt;/center&gt;
+
+&lt;h2 id=&quot;第二篇章&quot;&gt;第二篇章&lt;/h2&gt;
+
+&lt;p&gt;站在历史拐点，展望即将进击的未来十年，在主会场的【第二篇章】，我们计划和大家聊聊教育、新技术、面向未来的开源社区和开源商业，他们将决定着“开源到哪里去？”&lt;/p&gt;
+
+&lt;center&gt;第二篇章：进击十年（开源的 2022-2032）&lt;/center&gt;
+
+&lt;center&gt;开源教育：让更多人迈出第一步&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;开源与新技术（新一代操作系统、数据库、云原生、AI、区块链等）&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;圆桌：进击的未来十年，开源技术何去何从&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;开源社区：面向未来的开源社区&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;开源商业：成为开源独角兽&lt;/center&gt;
+&lt;center&gt;↓&lt;/center&gt;
+&lt;center&gt;圆桌：进击的未来十年，开源商业何去何从&lt;/center&gt;
+
+&lt;h2 id=&quot;第三篇章&quot;&gt;第三篇章&lt;/h2&gt;
+
+&lt;center&gt;进击的十年，由谁去实现？&lt;/center&gt;
+&lt;center&gt;面向未来的，是社区里千千万万的贡献者&lt;/center&gt;
+&lt;center&gt;开源包罗万象，跨学科，也跨人种、跨性别、跨职业，千人千面&lt;/center&gt;
+&lt;center&gt;……&lt;/center&gt;
+&lt;center&gt;人是社区的核心&lt;/center&gt;
+&lt;center&gt;在第三篇章，我们想最大限度地为大家展现开源万象&lt;/center&gt;
+&lt;center&gt;“未来十年，谁带我们进击”&lt;/center&gt;
+
+&lt;center&gt;第三篇章： 开源万象，Peaple in Community&lt;/center&gt;
+
+&lt;center&gt;Welcome Diversity&lt;/center&gt;
+&lt;center&gt;在第三篇章，我们想邀请社区中 100 位同学，每人 1~2 分钟&lt;/center&gt;
+&lt;center&gt;让更多人了解“活生生”的社区&lt;/center&gt;
+
+&lt;hr /&gt;
+
+&lt;center&gt;如果你愿意和我们一起站到历史拐点的舞台&lt;/center&gt;
+&lt;center&gt;如果你愿意和我们一起研读历史、展望未来&lt;/center&gt;
+&lt;center&gt;**我们在 COSCon'21 中国开源年会等你！**&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;相关链接
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://mmbiz.qpic.cn/mmbiz_jpg/hOYDxANDZpjGibKNicK75dV3F7eFgq0FVTX318n3eW9v5Swc7aCE84waaB9QiaF8dV8wn1CV2CIwvnaKzBf9UdLSQ/640?wx_fmt=jpeg&amp;amp;tp=webp&amp;amp;wxfrom=5&amp;amp;wx_lazy=1&amp;amp;wx_co=1&quot;&gt;COSCon’21 社区征集令–开心开源、进行到底&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://mmbiz.qpic.cn/mmbiz_jpg/hOYDxANDZpiaghpwSqloS4Eyib1vvVUIhY5CbVQicd1PGeF6Lh635aH7E8rTjzauSpt5hZOG9GDqaFXLO5Z8mkj6g/640?wx_fmt=jpeg&amp;amp;tp=webp&amp;amp;wxfrom=5&amp;amp;wx_lazy=1&amp;amp;wx_co=1&quot;&gt;重启：COSCon’21 讲师征集令 1+N&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://mmbiz.qpic.cn/mmbiz_jpg/hOYDxANDZpgkt3yKbP7Iia9yQh6o4NnamanYMIOXfCC7NuhgsqjHGUNUDdojGmG4fXb3jXn55BjYbFUWZhpUNEA/640?wx_fmt=jpeg&amp;amp;tp=webp&amp;amp;wxfrom=5&amp;amp;wx_lazy=1&amp;amp;wx_co=1&quot;&gt;重启：第六届中国开源年会 (COSCon’21) 1+N&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>wj-mcat</name></author><category term="event" /><category term="event" /><category term="opensource" /><category term="kaiyuanshe" /><summary type="html">人们常常说，在熬过了数十年寒冬，2020 -2021 我们终于迎来了本土开源的拐点，国家政策的引导、基础软件的崛起、开放协作精神的觉醒……各种各样的数据报告也无一不支撑着这一观点。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-kai-yuan-she-2021/kai-yuan-she-event-2021.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-kai-yuan-she-2021/kai-yuan-she-event-2021.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Google Season of Docs 2021 Volunteer Report: Document Quality</title><link href="https://wechaty.js.org/2021/10/09/gsod-document-quality-final-report/" rel="alternate" type="text/html" title="Google Season of Docs 2021 Volunteer Report: Document Quality" /><published>2021-10-09T00:00:00+00:00</published><updated>2021-10-09T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/09/gsod-document-quality-final-report</id><content type="html" xml:base="https://wechaty.js.org/2021/10/09/gsod-document-quality-final-report/">&lt;p&gt;It’s a great honor to be part of Wechaty family in Google Season of Docs 2021. This report demonstrates the improvement of document quality.&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;After solid four months in Google Season of Docs in Wechaty, we 13 technical writers had successfully created more than 130 pieces of new content, one demonstration video, one advertising video, and a brand-new landing page for Wechaty. Being a volunteer/ technical writer lead in charge of the quality of documents written by other 11 technical writers in the project, the journey was precious and wonderful. I also grew a lot when reviewing over 150 pull requests on Github, ranging from new topics to documentation structure updates. Working with such a large team is never easy, especially when most other tech writers are developers who didn’t have official technical writing training before.&lt;/p&gt;
+
+&lt;h2 id=&quot;improvement&quot;&gt;Improvement&lt;/h2&gt;
+
+&lt;p&gt;Before we started the GSoD project, the existing documentation of Wechaty had some issues. The committee updated documents like blog posts. Whenever the committee came up with some ideas or per user requests, they created user guides for specific topics. The information was scattering and wasn’t well-organized. Basically, in the beginning, there were only some documents about the installation or basic implementation of the software that were rather explicit. For the rest, instead of documents, they were more like technical notes that weren’t formatted logically.&lt;/p&gt;
+
+&lt;h3 id=&quot;structure&quot;&gt;Structure&lt;/h3&gt;
+
+&lt;p&gt;For the reasons above, we set the Wechaty documentation structure as the table below, which &lt;a href=&quot;https://documentation.divio.com/introduction/&quot;&gt;Divio.com&lt;/a&gt; proposed. The team paired up in groups based on the following divisions, and I worked as a final reviewer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-gsod-document-quality-final-report/chart.webp&quot; alt=&quot;chart&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After we had finalized the structure, it was time to determine the content inside. I analyzed the overlaps and topics inside each section in &lt;a href=&quot;https://wechaty.js.org/2021/05/30/simin-documentation-structure/&quot;&gt;Documentation structure&lt;/a&gt;. In the article, I had each team propose their frameworks first and then compare theirs with other groups’. As there were going to be four sections for the same software Wechaty, one of my jobs was to collect all the documents together and ensure no missing topics or overlaps. The first approach I took was to identify the classifications again. Rather than adding as much content as possible, each subject should focus on the goal they would like to achieve. We should provide a clear boundary of each section for user-friendliness and document maintenance in the future. Later in the meeting, I had the teams talk about their respective proposals and discuss the distribution with similar topics in other groups.&lt;/p&gt;
+
+&lt;h3 id=&quot;tutorials&quot;&gt;Tutorials&lt;/h3&gt;
+
+&lt;p&gt;Tutorials are usually the first documents that users encounter when they start Wechaty. At this moment, the users had no prior knowledge of the software and might not be experienced in the SDK world either. The purpose of the tutorials is to teach our audience how to use Wechaty from scratch. According to the reasons above, the tutorials are organized in terms of levels of difficulty. The audience is initially introduced to the elementary use cases and then moved on to advanced examples. Examples are shown in &lt;a href=&quot;https://wechaty.js.org/docs/examples/basic/starter-bot&quot;&gt;Starter bot&lt;/a&gt;. It is the very beginning bot with no actual functions. As the user learned more methods about Wechaty, they could create complex bots like &lt;a href=&quot;https://wechaty.js.org/docs/examples/professional/tuling123-bot&quot;&gt;Tuling 123 bot&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-guides&quot;&gt;How-to guides&lt;/h3&gt;
+
+&lt;p&gt;For documents like tutorials and how-to guides, these instruction-based documents should explicitly guide how to reach the results. These include step-by-step guides, preparation, and reference links to provide related information or lead users to the correct page if they run into some troubles.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of how I modified the structure of the content in how-to guides. Originally it was formatted as topic, introduction, and then listed down two functions. See the following picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-gsod-document-quality-final-report/manage_contact.webp&quot; alt=&quot;manage_contact&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The original one was ok for API reference documents but wasn’t suitable for how-to guides as it provided no instructions but information only. The updated version published as &lt;a href=&quot;https://wechaty.js.org/docs/howto/contact&quot;&gt;Manage contact&lt;/a&gt; is more user-friendly if they ask a specific question, “how to manage contact?”&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;p&gt;Let’s take a look at the reference section. A reference section is designed to include technical descriptions only and is information-oriented. Typical reference procedures include tables or bulleted lists, which present a large quantity of data in an organized way. An example of my modification could refer to &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/919&quot;&gt;Added Wechaty token section&lt;/a&gt; (my account as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;proudofsimin&lt;/code&gt;). The format was reconstructed to prevent giving instructions, and we should list down all the information. Some minor syntax errors or writing tone should also be considered, such as the sentence structures were supposed to be coherent in the article, and the active voice was more favorable than passive.&lt;/p&gt;
+
+&lt;h3 id=&quot;explanation&quot;&gt;Explanation&lt;/h3&gt;
+
+&lt;p&gt;When it comes to the introduction and explanation section, the section is unique in content as it contains information about the background knowledge of the software. Despite it being a technical article, some marketing purposes should be included to promote to a more significant number of people. In the example &lt;a href=&quot;https://github.com/wechaty/wechaty.js.org/pull/900&quot;&gt;Who is using Wechaty?&lt;/a&gt;, the sub-section of the introduction section, the target audience isn’t those already using Wechaty, but those still considering applying Wechaty to their work. As the screenshot is shown in the pull request, the original version implied that most users are Chinese companies. Though there was nothing wrong with this statement, when it comes to users outside China, it doesn’t look so attractive to them as the article described the software as a local application rather than recognized around the world. In the &lt;a href=&quot;https://wechaty.js.org/docs/who-is-using-wechaty&quot;&gt;revised version&lt;/a&gt;, the word “Chinese” is eliminated and focused on the part that those companies are multinational with customers around the globe.&lt;/p&gt;</content><author><name>proudofsimin</name></author><category term="gsod" /><category term="google" /><category term="gsod" /><category term="2021" /><category term="docs" /><category term="volunteer" /><category term="project" /><category term="news" /><summary type="html">It’s a great honor to be part of Wechaty family in Google Season of Docs 2021. This report demonstrates the improvement of document quality.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-gsod-document-quality-final-report/background.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-gsod-document-quality-final-report/background.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">小白入门：如何用科技拯救你的记忆力</title><link href="https://wechaty.js.org/2021/10/09/how-to-save-your-memory-with-technology/" rel="alternate" type="text/html" title="小白入门：如何用科技拯救你的记忆力" /><published>2021-10-09T00:00:00+00:00</published><updated>2021-10-09T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/09/how-to-save-your-memory-with-technology</id><content type="html" xml:base="https://wechaty.js.org/2021/10/09/how-to-save-your-memory-with-technology/">&lt;p&gt;过去的一周接触到了 wechaty ，非常兴奋，首先对于这个神奇的东西感到惊奇，其次我是一个比较喜欢解决问题的人，可以用它解决很多实际问题，于是便开始了我的 wechaty 之路，下面和大家简单说一下我做的一个小demo，本文介绍使用的技术都是基本中的基本，几乎是对前端技术稍有了解的人就可以轻易完成，此举旨在帮助刚接触 wechaty 的同学（包括我）建立信心，不至于被挫败感吓跑。&lt;/p&gt;
+
+&lt;h2 id=&quot;开发需求&quot;&gt;开发需求&lt;/h2&gt;
+
+&lt;p&gt;这个小功能的需求来源于我老婆，作为一个科研工作者，她在工作当中需要记录的东西很多，但有些情况又不能及时记录，所以常常会把一些需要记得东西发给我（如图），然后我一脸懵的还以为要我做什么，但是慢慢也就习惯人肉备忘录的设定，歪个楼，我老婆就是我的产品经理，碰到问题就找我，我的很多技术也是这样学会的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-how-to-save-your-memory-with-technology/before.webp&quot; alt=&quot;bofore&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是这种方法的弊端很多，微信毕竟是聊天软件，聊天记录掺杂过多，检索起来费时费力等缺点，于是我就尝试着寻找解决方法，此时恰巧碰到 wechaty，简单了解后，它完全解决了我当前的痛点，简就是直万事俱备，只欠coding了，话不多说，说干就干。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目目录&quot;&gt;项目目录&lt;/h2&gt;
+
+&lt;p&gt;本次主要介绍的是onMessage.js 中的内容&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  memory-assistant
+    |── src
+    |    |── index.js         &lt;span class=&quot;c&quot;&gt;# 入口文件&lt;/span&gt;
+    |    |── config.js  &lt;span class=&quot;c&quot;&gt;# 配置文件&lt;/span&gt;
+    |    |── onScan.js  &lt;span class=&quot;c&quot;&gt;# 机器人需要扫描二维码时监听回调&lt;/span&gt;
+    |    |── onLogin.js  &lt;span class=&quot;c&quot;&gt;# 监听登录&lt;/span&gt;
+    |    |── onMessage.js      &lt;span class=&quot;c&quot;&gt;# 消息监听回调&lt;/span&gt;
+    |    └── storage-room.json  &lt;span class=&quot;c&quot;&gt;# 存储信息保存文件&lt;/span&gt;
+    └── package.json            &lt;span class=&quot;c&quot;&gt;# 项目初始化文件&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
+
+&lt;h3 id=&quot;技术需求&quot;&gt;技术需求&lt;/h3&gt;
+
+&lt;p&gt;由于本人刚接触，所以尽量以最少的代码量及技术栈来实现功能&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;wechaty&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;wechaty：用来接收微信发来的消息以及根据对应指令进行处理及响应&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;nodeJs 基本操作&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;fs 文件操作模块：用来操作读写功能，实现数据保存&lt;/p&gt;
+
+    &lt;p&gt;path 系统路径模块：用来获取存储文件位置等操作&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;javascript 相关技术&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;本文默认读者已熟悉 js 基本知识，如数组遍历、字符串拼接等相关操作&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;开发过程&quot;&gt;开发过程&lt;/h2&gt;
+
+&lt;h3 id=&quot;项目构建&quot;&gt;项目构建&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;wechaty 引入及协议配置&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;初始化项目文件夹，并安装以下依赖&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c1&quot;&gt;// 链接转化二维码控制台输出&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;cnpm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;qrcode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;terminal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;
+   
+ &lt;span class=&quot;c1&quot;&gt;// wechaty核心包&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;cnpm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wechaty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;
+   
+ &lt;span class=&quot;c1&quot;&gt;// ipad协议包 按个人不同的token切换不同协议&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;cnpm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wechaty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;puppet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;padlocal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://wechaty.js.org/&quot;&gt;wechaty官网&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://pad-local.com/&quot;&gt;token申请&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;如果没有 pad 协议 token 的可参考&lt;a href=&quot;http://wechaty.js.org/2021/04/13/wechaty-uos-web/&quot;&gt;web协议&lt;/a&gt;，感谢作者&lt;a href=&quot;https://github.com/leochen-g&quot;&gt;@Leo chen&lt;/a&gt;分享，需要注意的是web协议获取不到固定的id值以及部分接口无法使用，但是如果只针对一个人的话是可行的。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;入口文件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.js&lt;/code&gt; 编写&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Wechaty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;wechaty&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PuppetPadlocal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;wechaty-puppet-padlocal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;QrcodeTerminal&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;qrcode-terminal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onMessage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./onMessage.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Wechaty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;puppet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PuppetPadlocal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;puppet_padlocal_token&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 填写自己的token，一般长这样puppet_padlocal_asd4a564d56ad456s4d6a4256515&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    
+ &lt;span class=&quot;nx&quot;&gt;bot&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// 扫码登录&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;scan&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qrcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Scan QR Code to login: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\nhttps://api.qrserver.com/v1/create-qr-code/?data=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;encodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qrcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;QrcodeTerminal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qrcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// 登录监听&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;logined&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// 消息监听&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;消息处理文件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onMessage.js&lt;/code&gt; 文件之存东西&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c1&quot;&gt;// 发消息人&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;talker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
+ &lt;span class=&quot;c1&quot;&gt;// 消息内容&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
+ &lt;span class=&quot;c1&quot;&gt;// 是否是群消息&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;room&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;room&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
+ &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;room&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// 当前只处理非群消息，如果需要处理群消息可以利用 mention 相关接口&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;存东西&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;怎么存东西&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;咋存东西&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;如何存东西&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+       &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;你可以发送：存东西 钥匙 笔筒里 ，这样我就会帮你把钥匙存到笔筒里哦&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;存东西&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;//文件路径，__dirname为当前运行js文件的目录&lt;/span&gt;
+     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./storage_room.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;存东西 &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ['钥匙', '鞋柜上']&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;//读取json文件&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;utf-8&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;文件读取失败&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;// json 文件的数据&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;// 检查当前用户是否储存过&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;// 数据库没有该用户，需要新建用户&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;当前用户没存储过，开始存储&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// 没存过 ==&amp;gt; 新增&lt;/span&gt;
+           &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tempVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                 &lt;span class=&quot;na&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                 &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tempVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+             &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./storage_room.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+             &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+               &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`已经把&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;放在&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;了 [OK]`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// 数据库存在当前用户&lt;/span&gt;
+           &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldPlace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;当前用户存储过，添加物品或更改位置&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// 存过 ==&amp;gt; 更新位置&lt;/span&gt;
+           &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// 如果当前物品储存过，就需要更改位置&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;c1&quot;&gt;// 更改位置&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;oldPlace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;place&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;c1&quot;&gt;// 如果当前物品没储存过，需要将当前物品push到储存列表中&lt;/span&gt;
+             &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newStorage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// 写入文件添加物品&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+             &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./storage_room.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+             &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;c1&quot;&gt;// 更改位置文案提示&lt;/span&gt;
+                 &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+                   &lt;span class=&quot;s2&quot;&gt;`已经把&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;从&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oldPlace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;挪到了&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;了 [OK]`&lt;/span&gt;
+                 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;c1&quot;&gt;// 新建位置文案提示&lt;/span&gt;
+                 &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`已经把&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;放到&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;storageInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;了 [OK]`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;消息处理文件 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onMessage.js&lt;/code&gt; 文件之找东西&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;主要逻辑是读取仓库文件，遍历仓库当前存储的用户中有没有当前发起请求的用户，没有的话就开始新建，如果该用户已经存储过，则查看当前用户请求存储的物品有没有在仓库中存储过，如果之前存储过该物品，则进行位置更新，如果之前没存储过该物品，则进行新建。&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;c1&quot;&gt;// 因与 step3 在同一个文件内，相关变量来源课参考 step3 &lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;在哪&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;//文件路径，__dirname为当前运行js文件的目录&lt;/span&gt;
+     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./storage_room.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+     &lt;span class=&quot;c1&quot;&gt;//读取json文件&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;utf-8&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;文件读取失败&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+             &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;你还没有东西存在我这里哦，可以发送：存东西 钥匙 鞋柜上，这样我就能帮你把钥匙存到鞋柜上啦&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;findThing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;在哪&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;findThing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+             &lt;span class=&quot;s2&quot;&gt;`仓库里还没有 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+               &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;在哪&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; 哦，可以发送 找东西 来查看仓库列表~`&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+           &lt;span class=&quot;s2&quot;&gt;`你忘了吗，你把 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;findThing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; 放在了 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;findThing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ，找到了别忘了来感谢我哦~ `&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;找东西&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;//文件路径，__dirname为当前运行js文件的目录&lt;/span&gt;
+     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./storage_room.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+     &lt;span class=&quot;c1&quot;&gt;//读取json文件&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;utf-8&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;文件读取失败&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+             &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;你还没有东西存在我这里哦，可以发送：存东西 钥匙 鞋柜上，这样我就能帮你把钥匙存啦！&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;储物清单&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;. &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;在&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;place&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;// 返回清单&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;仓库存储文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;storage-room.json&lt;/code&gt; 内容&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;tester&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;靴子&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;鞋柜里&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sun Oct 10 2021 14:31:06GMT+0800&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;电脑&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;书房桌子上&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sun Oct 08 2021 18:21:06GMT+0800&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;钱包&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;床头柜里&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sun Oct 04 2021 09:14:06GMT+0800&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;保鲜膜&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;厨柜里&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sun Oct 09 2021 18:51:06GMT+0800&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;钥匙&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;笔筒里&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sun Oct 08 2021 08:16:06GMT+0800&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;乒乓球&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;阳台储物柜&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sun Oct 06 2021 15:17:06GMT+0800&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;消息处理流程示意图&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;   graph TD
+   A[Start] --&amp;gt; B(接收到存储请求)
+       B --&amp;gt; C(读取数据库json文件)
+       C --&amp;gt; D(是否存在该用户)
+       D --&amp;gt; |Y| E(是否存在该物品)
+       E --&amp;gt; |Y| I(更新物品位置)
+       I --&amp;gt; |T| K(返回成功信息)
+       I --&amp;gt; |F| L(返回失败信息)
+       K --&amp;gt; | | Z[End]
+       L --&amp;gt; | | Z
+       E --&amp;gt; |N| J(创建物品位置)
+       J --&amp;gt; |T| M(返回成功信息)
+       J --&amp;gt; |F| N(返回失败信息)
+       M --&amp;gt; | | Z
+       N --&amp;gt; | | Z
+       D --&amp;gt; |N| F(创建该用户以及物品位置)
+       F --&amp;gt; |T| G(返回成功信息)
+       F --&amp;gt; |F| H(返回失败信息)
+       G --&amp;gt; | | Z
+       H --&amp;gt; | | Z
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;效果&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/10-how-to-save-your-memory-with-technology/now.webp&quot; alt=&quot;now&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;作者: &lt;a href=&quot;https://github.com/stefan-ysh/&quot;&gt;stefan&lt;/a&gt;，流水线 coder，曾获得学习委员和尊师标兵荣誉称号。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>stefan</name></author><category term="article" /><category term="blog" /><category term="study" /><category term="introduction" /><summary type="html">过去的一周接触到了 wechaty ，非常兴奋，首先对于这个神奇的东西感到惊奇，其次我是一个比较喜欢解决问题的人，可以用它解决很多实际问题，于是便开始了我的 wechaty 之路，下面和大家简单说一下我做的一个小demo，本文介绍使用的技术都是基本中的基本，几乎是对前端技术稍有了解的人就可以轻易完成，此举旨在帮助刚接触 wechaty 的同学（包括我）建立信心，不至于被挫败感吓跑。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-how-to-save-your-memory-with-technology/bgc.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-how-to-save-your-memory-with-technology/bgc.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Wechaty OSPP(开源之夏) Final Demo Day</title><link href="https://wechaty.js.org/2021/10/09/summer-2021-wechaty-soc-final-demo-day/" rel="alternate" type="text/html" title="Wechaty OSPP(开源之夏) Final Demo Day" /><published>2021-10-09T00:00:00+00:00</published><updated>2021-10-09T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/10/09/summer-2021-wechaty-soc-final-demo-day</id><content type="html" xml:base="https://wechaty.js.org/2021/10/09/summer-2021-wechaty-soc-final-demo-day/">&lt;p&gt;“&lt;a href=&quot;https://summer.iscas.ac.cn&quot;&gt;开源软件供应链点亮计划-暑期2021&lt;/a&gt;”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。活动联合各大开源社区，针对重要开源软件的开发与维护提供项目，并向全球高校学生开放报名。 学生可自主选择感兴趣的项目进行申请，并在中选后获得该软件资深维护者（社区导师）亲自指导的机会。&lt;/p&gt;
+
+&lt;p&gt;Wechaty 作为中国最大的聊天机器人开源项目，合计发布了9个项目，共收到来自上海大学、华东理工大学、长沙理工大学、中国科学技术大学、电子科技大学等高校的几十份申请。&lt;/p&gt;
+
+&lt;p&gt;此次的9个项目的学生开发者，均录制了一份路演视频，向社区介绍具体的项目进展和后续规划。
+除了按顺序播放视频，还会邀请社区导师和开发者进行评价和指导，并给出切实有效的建议。&lt;/p&gt;
+
+&lt;p&gt;此外，开发者们可以在路演日中找到自己感兴趣的项目，并在路演日结束后，与对应的开发者取得联系并在后续共同开发。&lt;/p&gt;
+
+&lt;p&gt;开发者和项目地址：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://wechaty.js.org/2021/06/24/wechaty-soc-kick-off-meeting/&quot;&gt;Wechaty Open Source Promotion Plan 2021 Kickoff Meeting&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/wechaty/summer/issues/79&quot;&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;结项汇报final-term-demo-day会议纪实&quot;&gt;结项汇报（Final-Term Demo Day）会议纪实&lt;/h2&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/xqJN3NmGukg&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;You can learn more from our &lt;a href=&quot;https://docs.google.com/document/d/1fVCk8qRYc4RKGMf2UY5HOe07hEhPUOpGC34v88GEFJg/edit#heading=h.xdrnd37ekiek&quot;&gt;meeting_notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;agendas议程&quot;&gt;Agendas议程&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg&quot;&gt;0:00:00&lt;/a&gt; 0.会议开始&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=510&quot;&gt;0:08:30&lt;/a&gt; 1.介绍会议议程&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=630&quot;&gt;0:10:30&lt;/a&gt; 2.陈婧：开发基于 Wechaty 实现微俱乐部会员&amp;amp;活动管理的微信小程序&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=1780&quot;&gt;0:29:40&lt;/a&gt; 3.肖良玉:基于 Itchat为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=2810&quot;&gt;0:46:50&lt;/a&gt; 4.张瑞宁,邵琦:开发支持电信运营商 5G Chatbot / RCS 的 Wechaty 接入 Puppet 模块&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=3900&quot;&gt;1:05:00&lt;/a&gt; 5.马田慧:基于开放 API 封装 Wechaty 接口下的飞书聊天机器人&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=4770&quot;&gt;1:19:30&lt;/a&gt; 6.刘靖:基于 Blessed 的 Wechaty 命令行文本客户端软件（仿IRC）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=5640&quot;&gt;1:34:00&lt;/a&gt; 7.林宇靖，张瑞宁:基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=6660&quot;&gt;1:51:00&lt;/a&gt; 8.anaivebird:开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=8490&quot;&gt;2:21:30&lt;/a&gt; 9.左雁茹:基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=9760&quot;&gt;2:42:40&lt;/a&gt; 10.井维嘉: 基于Wechaty 开发开源的二师兄社群逗乐机器人&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/xqJN3NmGukg?t=11396&quot;&gt;3:09:56&lt;/a&gt; 11.总结&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;wechaty-期末项目列表&quot;&gt;Wechaty 期末项目列表&lt;/h2&gt;
+
+&lt;p&gt;Wechaty 在多平台、多功能多个维度上，共发布了 9 项任务，并通过 issue 的方式进行每周的更新。
+如果你有看到感兴趣的项目，可以直接在对应 issue 下面找到负责对应任务的开发者。&lt;/p&gt;
+
+&lt;p&gt;你可以在查看&lt;a href=&quot;https://wechaty.js.org/2021/06/24/wechaty-soc-kick-off-meeting/&quot;&gt;首次KickOff博客&lt;/a&gt;了解更多信息。&lt;/p&gt;
+
+&lt;h3 id=&quot;开发基于-wechaty-实现微俱乐部会员活动管理的微信小程序&quot;&gt;开发基于 Wechaty 实现微俱乐部会员&amp;amp;活动管理的微信小程序&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：鲁玉超 物联网行业产品经理、微信小程序群组大师开发者（atorber@163.com）&lt;/li&gt;
+  &lt;li&gt;学生开发者：陈婧，华东理工大学本科生（1017137803@qq.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/78&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/78&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/15/ospp-plan-wechaty-club-managment/&quot;&gt;OSPP 2021-期初报告-开发基于微信实现微俱乐部会员&amp;amp;活动管理的微信小程序&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/29/ospp-mid-term-club-managment/&quot;&gt;OSPP 2021-期中报告-开发基于微信实现微俱乐部会员&amp;amp;活动管理的微信小程序&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/09/29/final-term-club-managment&quot;&gt;OSPP 2021-结项报告-开发基于Wechaty实现微俱乐部会员&amp;amp;活动管理的微信小程序&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/eSgaD32njVw&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/5LZ08re5YR8&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;基于-itchat-为-python-wechaty-实现社区首个-python-语言的本地-puppet&quot;&gt;基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：吴京京 Python Wechaty creator，Wechaty committer （wjmcater@gmail.com）；李卓桓 Wechaty creator，Python Wechaty maintainer，Tencent TVP of Chatbot （zixia@zixia.net）&lt;/li&gt;
+  &lt;li&gt;学生开发者：肖良玉，杭州电子科技大学本科生（x@lyleshaw.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/75&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/75&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-itchat-puppet/&quot;&gt;OSPP 2021-期初报告-基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/29/ospp-mid-term-wechaty-itchat-puppet/&quot;&gt;OSPP 2021-期中报告-基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/10/05/ospp-final-term-wechaty-itchat-puppet/&quot;&gt;OSPP 2021-结项报告-基于Itchat为Python Wechaty实现社区首个Python语言的本地Puppet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-1&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/SKhgnRaljzk&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-1&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/fGjEd5O97lQ&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;开发支持电信运营商-5g-chatbot--rcs-的-wechaty-接入-puppet-模块&quot;&gt;开发支持电信运营商 5G Chatbot / RCS 的 Wechaty 接入 Puppet 模块&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：康嘉 硬核桃社区PM （sj-kangj@dimpt.com）；李佳芮 Wechaty co-creator，Founder &amp;amp; CEO of Juzi.BOT （rui@chatie.io）&lt;/li&gt;
+  &lt;li&gt;学生开发者：张瑞宁，长沙理工大学本科生（3134191406@qq.com）；邵琦（shaoqichn@qq.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/74&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/74&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/15/ospp-plan-5g-chatbot-puppet/&quot;&gt;OSPP 2021-期初报告-开发支持电信运营商5G Chatbot/RCS的 Wechaty接入Puppet模块&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/30/ospp-mid-term-5g-chatbot-puppet/&quot;&gt;OSPP 2021-期中报告-开发支持电信运营商 5G Chatbot / RCS 的 Wechaty 接入 Puppet 模块&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/10/07/ospp-final-term-5g-chatbot-puppet/&quot;&gt;OSPP 2021-结项报告-开发支持电信运营商 5G Chatbot / RCS 的 Wechaty 接入 Puppet 模块&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-2&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/cQydTnaym7Y&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-2&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/4-0lW0kvelE&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;基于开放api封装-wechaty-接口下的飞书聊天机器人&quot;&gt;基于开放API封装 Wechaty 接口下的飞书聊天机器人&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师： 范蕊 飞书Puppet作者 （froxanne1024@gmail.com）&lt;/li&gt;
+  &lt;li&gt;学生开发者：马田慧（tianhuima01@gmail.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/38&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/38&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/14/ospp-plan-wechaty-puppet-lark/&quot;&gt;OSPP 2021-期初报告-基于开放 API 封装 Wechaty 接口下的飞书聊天机器人&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/30/ospp-mid-term-wechaty-puppet-lark/&quot;&gt;OSPP 2021-期中报告-基于开放 API 封装 Wechaty 接口下的飞书聊天机器人&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/09/29/ospp-final-term-wechaty-puppet-lark/&quot;&gt;OSPP 2021-结项报告-基于开放 API 封装 Wechaty 接口下的飞书聊天机器人&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-3&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/-HOF0LV1d54&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-3&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/lH3giTpdOtM&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;基于-blessed-的-wechaty-命令行文本客户端软件仿irc&quot;&gt;基于 Blessed 的 Wechaty 命令行文本客户端软件（仿IRC）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：李卓桓 Creator of Wechaty，Tencent TVP of Chatbot （zixia@zixia.net）&lt;/li&gt;
+  &lt;li&gt;学生开发者：刘靖，上海大学本科生（liuchinggg@gmail.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/80&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/80&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/14/ospp-plan-blessed-cli/&quot;&gt;OSPP 2021-期初报告-基于 Blessed 的 Wechaty 命令行文本客户端软件&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/26/ospp-mid-term-cli/&quot;&gt;OSPP 2021-期中报告-基于 Blessed 的 Wechaty 命令行文本客户端软件&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/09/30/ospp-final-term-cli/&quot;&gt;OSPP 2021-结项报告-基于 Blessed 的 Wechaty 命令行文本客户端软件&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-4&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/PssH9epe0tU&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-4&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/D5QbX183kb8&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;基于-matrix-appservice-wechaty-项目的用户群与消息等基础功能的完善&quot;&gt;基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：yswtrue Wechaty contributor （yswtrue@gmail.com），李卓桓 Creator of Wechaty，Tencent TVP of Chatbot （zixia@zixia.net）&lt;/li&gt;
+  &lt;li&gt;学生开发者：林宇靖, 上海海洋大学本科生（545641826@qq.com）；张瑞宁, 长沙理工大学本科生（3134191406@qq.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/59&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/59&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/14/ospp-plan-wechaty-matrix/&quot;&gt;OSPP 2021-期初报告-基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/30/ospp-mid-term-matrix-wechaty/&quot;&gt;OSPP 2021-期中报告-基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/09/28/ospp-final-term-matrix-wechaty/&quot;&gt;OSPP 2021-结项报告-基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-5&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/3j3BGRnoVtE&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-5&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/qtbExkN0uoI&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;开发支持-qq-聊天软件的-wechaty-puppet-provider-模块&quot;&gt;开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：李佳芮 Wechaty co-creator，Founder &amp;amp; CEO of Juzi.BOT （rui@chatie.io）；李卓桓 Creator of Wechaty，Tencent TVP of Chatbot （zixia@zixia.net）&lt;/li&gt;
+  &lt;li&gt;学生开发者：anaivebird（20210240029@fudan.edu.cn）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/81&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/81&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/11/ospp-plan-qq-puppet/&quot;&gt;OSPP 2021-期初报告-开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/31/ospp-mid-term-qq-puppet/&quot;&gt;OSPP 2021-期中报告-开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/10/06/ospp-final-term-qq-puppet/&quot;&gt;OSPP 2021-结项报告-开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-6&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/Z2IIPe0FLA4&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-6&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/TbIgFhSWVxI&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;基于-wechaty-puppet-official-account-项目的用户与消息等基础功能的完善&quot;&gt;基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：吴京京 Python Wechaty creator，Wechaty committer （wjmcater@gmail.com）&lt;/li&gt;
+  &lt;li&gt;学生开发者：左雁茹，中国科学技术大学研究生（zuoyanru@mail.ustc.edu.cn）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/82&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/82&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/17/ospp-plan-wechaty-puppet-oa/&quot;&gt;OSPP 2021-期初报告-基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/26/ospp-mid-term-wechaty-puppet-oa/&quot;&gt;OSPP 2021-期中报告-基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/10/03/ospp-final-term-wechaty-puppet-oa/&quot;&gt;OSPP 2021-结项报告-基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-7&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/ySxpkKjv018&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-7&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/iVyutBZMZRE&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;基于wechaty-开发开源的二师兄社群逗乐机器人&quot;&gt;基于Wechaty 开发开源的二师兄社群逗乐机器人&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导师：王玉丹 Wechaty Contributor，AI Chatbot Wechaty x PaddleHub UP主，Wechaty社区大使 （valeriewyd@gmail.com）；鲁玉超 物联网行业产品经理、微信小程序群组大师开发者 （atorber@163.com）；韩磊 百度飞桨PPDE，飞桨上海领航团团长 （iregisteru@163.com）&lt;/li&gt;
+  &lt;li&gt;学生开发者：井维嘉，海南大学（hbsjzjwj@163.com）&lt;/li&gt;
+  &lt;li&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/83&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/83&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-piggy-bro/&quot;&gt;OSPP 2021-期初报告-基于 Wechaty 开发开源的二师兄社群逗乐机器人&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/08/26/ospp-mid-term-wechaty-piggy-bro/&quot;&gt;OSPP 2021-期中报告-基于 Wechaty 开发开源的二师兄社群逗乐机器人&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wechaty.js.org/2021/10/06/ospp-final-term-wechaty-piggy-bro/&quot;&gt;OSPP 2021-结项报告-基于 Wechaty 开发开源的二师兄社群逗乐机器人&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;展示视频-8&quot;&gt;展示视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/Na9pGdf_6oY&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h4 id=&quot;live-demo-视频-8&quot;&gt;Live Demo 视频&lt;/h4&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/51EwCNB_Y90&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;欢迎报名开源之夏-2022&quot;&gt;欢迎报名开源之夏 2022！&lt;/h2&gt;
+
+&lt;h3 id=&quot;报名学生开发者&quot;&gt;报名学生开发者&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在校生都可以报名&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原始博客见： &lt;a href=&quot;https://wechaty.js.org/2021/06/24/summer-wechaty-guide/&quot;&gt;OSPP（开源之夏）指导手册 - 2021&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Wechaty 的项目 Issue 作为本次同学和导师通知的主要渠道，请所有同学在入选后，务必完成第一件事：
+&lt;strong&gt;在项目清单 Issue 下面，把所有同学和导师需要完成的工作，以 checklist 的形式回复到 Issue 下面，方便后续同学和导师完成相关工作，完成后在 Comment 中打钩确认&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Wechaty 社区秉持开源开放的的原则，所有会议记录、在线会议、阶段性报告等视频、文档资料都会对社区完全开放。对自己的视频、文档资料介意开放的同学，请谨慎考虑加入。&lt;/p&gt;
+
+&lt;p&gt;参与项目的同学完成 &lt;strong&gt;日常工作&lt;/strong&gt; 和 &lt;strong&gt;阶段性工作&lt;/strong&gt;，具体如下：&lt;/p&gt;
+
+&lt;h4 id=&quot;学生日常工作&quot;&gt;学生日常工作&lt;/h4&gt;
+
+&lt;p&gt;学生每周在 issue 下回复进度报告。&lt;/p&gt;
+
+&lt;p&gt;日常工作以 OSPP 2020 的优秀学生突出贡献奖获得者&lt;a href=&quot;https://wechaty.js.org/contributors/univerone/&quot;&gt;江姗姗&lt;/a&gt;的周报告和导师总结为例，详见&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/10&quot;&gt;编写一个“每日一句”插件&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;报告模板参考：&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/template/student-weekly-report-template.md&quot;&gt;student-weekly-report-template&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;学生阶段性工作&quot;&gt;学生阶段性工作&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/student-plan.md&quot;&gt;期初报告要求&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/student-mid-term.md&quot;&gt;期中报告要求&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;期中答辩(Mid-term Demo Day)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/student-final-term.md&quot;&gt;期末报告要求&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;期末答辩(Final-term Demo Day)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;报名社区导师&quot;&gt;报名社区导师&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;社区的 Contributor 都可以报名&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;导师日常工作&quot;&gt;导师日常工作&lt;/h4&gt;
+
+&lt;p&gt;导师每周在 issue 下根据学生的进度报告进行评分。&lt;/p&gt;
+
+&lt;p&gt;日常工作以 OSPP 2020 的优秀学生突出贡献奖获得者&lt;a href=&quot;https://wechaty.js.org/contributors/univerone/&quot;&gt;江姗姗&lt;/a&gt;的周报告和导师总结为例，详见&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/10&quot;&gt;编写一个“每日一句”插件&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;报告模板参考：&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/template/mentor-weekly-report-template.md&quot;&gt;mentor-weekly-report-template&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;导师阶段性工作&quot;&gt;导师阶段性工作&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/mentor-plan.md&quot;&gt;期初报告评审&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/mentor-mid-term.md&quot;&gt;期中报告评审&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;期中答辩(Mid-term Demo Day)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/mentor-final-term.md&quot;&gt;期末报告评审&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;期末答辩(Final-term Demo Day)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;报名wechaty-ospp-org-admin&quot;&gt;报名Wechaty OSPP Org Admin&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;当过导师的 Wechaty Contributor 可以报名&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;工具包&quot;&gt;工具包&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;社区 Repo: &lt;a href=&quot;https://github.com/wechaty/summer&quot;&gt;https://github.com/wechaty/summer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;社区通知 Issue：&lt;a href=&quot;https://github.com/wechaty/summer/issues/筹备会中完成后确认的项目清单链接&quot;&gt;https://github.com/wechaty/summer/issues/筹备会中完成后确认的项目清单链接&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;社区微信群：&lt;strong&gt;&lt;em&gt;Summer of Wechaty - SoW&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;社区 Org Admin 组委会群：&lt;strong&gt;&lt;em&gt;Summer of Wechaty Org Admin SoW&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Wechaty Contributor 群：&lt;strong&gt;&lt;em&gt;Wechaty Contributors&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;所有发布到 Wechaty 的博客需要打上如下标签：
+    &lt;ul&gt;
+      &lt;li&gt;ospp-admin&lt;/li&gt;
+      &lt;li&gt;summer-2022&lt;/li&gt;
+      &lt;li&gt;summer-of-wechaty&lt;/li&gt;
+      &lt;li&gt;ospp&lt;/li&gt;
+      &lt;li&gt;ospp-2022&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;org-admin-阶段性工作&quot;&gt;Org Admin 阶段性工作&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/org-admin-prepare.md&quot;&gt;筹备阶段&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/org-admin-first-meeting.md&quot;&gt;期初见面会&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/org-admin-mid-term.md&quot;&gt;期中报告状态收集 &amp;amp; 答辩&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/org-admin-final-term.md&quot;&gt;期末报告状态收集 &amp;amp; 答辩&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer/blob/master/iscas-open-source-promotion-plan/2021/org-admin-be-better.md&quot;&gt;复盘 &amp;amp; 展望&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;欢迎正在阅读的你参与其中&quot;&gt;欢迎正在阅读的你参与其中&lt;/h2&gt;
+
+&lt;p&gt;虽然“暑期2021”的报名已经结束，但Wechaty社区依然欢迎正在阅读本篇内容的你参与到暑期2021的工作中来。
+以下是几种可能的参与方式：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;时刻跟进Wechaty SoC项目的每周例行更新Issue，并直接与相关负责导师和学生开发者取得联系，和他们交流相关进展。&lt;/li&gt;
+  &lt;li&gt;在 Wechaty 开发者群内，为学生开发者们的Plan Blog、POC Blog和Finished Blog点赞和提出想法。&lt;/li&gt;
+  &lt;li&gt;直接参与已经完成部分工作的项目开发，为学生开发者们负责的复杂项目添砖加瓦。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wechaty/summer&quot;&gt;了解更多&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>juzibot</name></author><category term="announcement" /><category term="ospp-admin" /><category term="summer-2021" /><category term="summer-of-wechaty" /><category term="ospp" /><category term="ospp-2021" /><category term="ecosystem" /><category term="news" /><category term="meetup" /><category term="featured" /><category term="final" /><summary type="html">“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。活动联合各大开源社区，针对重要开源软件的开发与维护提供项目，并向全球高校学生开放报名。 学生可自主选择感兴趣的项目进行申请，并在中选后获得该软件资深维护者（社区导师）亲自指导的机会。</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/10-summer-2021-wechaty-soc-final-demo-day/final-demo-day.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/10-summer-2021-wechaty-soc-final-demo-day/final-demo-day.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
